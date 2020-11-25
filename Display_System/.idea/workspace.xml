@@ -21,10 +21,9 @@
   <component name="ChangeListManager">
     <list default="true" id="a5442664-85c2-4a59-84ef-3dbe5ede0e72" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/DisplayContent.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_11_24_185148_create_displays_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_11_24_185148_create_displays_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_11_24_185312_create_display_contents_table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_11_24_185328_create_posts_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_11_24_185328_create_posts_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_11_24_185343_create_comments_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_11_24_185343_create_comments_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_11_25_001807_create_display_contents_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_11_25_001807_create_display_contents_table.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -176,7 +175,7 @@
       <option name="presentableId" value="Default" />
       <updated>1606170384840</updated>
       <workItem from="1606170385964" duration="958000" />
-      <workItem from="1606232254224" duration="7036000" />
+      <workItem from="1606232254224" duration="8210000" />
     </task>
     <servers />
   </component>

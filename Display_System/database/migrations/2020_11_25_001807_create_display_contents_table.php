@@ -14,7 +14,7 @@ class CreateDisplayContentsTable extends Migration
     public function up()
     {
         Schema::create('display_contents', function (Blueprint $table) {
-            $table->primary(['display_id','content_id']);
+            $table->primary(['display_id', 'content_id']);
 
             $table->foreignId('display_id')
                 ->constrained('displays')
@@ -25,8 +25,6 @@ class CreateDisplayContentsTable extends Migration
                 ->constrained('contents')
                 ->onDelete('cascade')
                 ->onUpdate('cascade');
-
-
             $table->timestamps();
         });
     }
