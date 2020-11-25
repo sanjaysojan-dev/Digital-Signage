@@ -17,6 +17,7 @@ class CreateContentsTable extends Migration
             $table->id('id');
             $table->longText('description');
             $table->string('image')->nullable();
+
             $table->foreignId('user_id')
                 ->constrained('users')
                 ->onDelete('cascade')

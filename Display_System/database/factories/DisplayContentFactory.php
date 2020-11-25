@@ -22,7 +22,8 @@ class DisplayContentFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'display_id'=>$this->faker->numberBetween(1,5),
+            'content_id'=>$this->faker->numberBetween(1,5)
         ];
     }
 }

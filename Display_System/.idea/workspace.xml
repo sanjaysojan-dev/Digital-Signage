@@ -21,9 +21,19 @@
   <component name="ChangeListManager">
     <list default="true" id="a5442664-85c2-4a59-84ef-3dbe5ede0e72" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_11_24_185328_create_posts_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_11_24_185328_create_posts_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_11_24_185343_create_comments_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_11_24_185343_create_comments_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_11_25_001807_create_display_contents_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_11_25_001807_create_display_contents_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/factories/CommentFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/CommentFactory.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/factories/ContentFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/ContentFactory.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/factories/DisplayContentFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/DisplayContentFactory.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/factories/DisplayFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/DisplayFactory.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/factories/PostFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/PostFactory.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_11_25_001639_create_contents_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_11_25_001639_create_contents_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeders/CommentTableSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/CommentTableSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeders/ContentTableSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/ContentTableSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeders/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/DatabaseSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeders/DisplayContentTableSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/DisplayContentTableSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeders/DisplayTableSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/DisplayTableSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeders/PostTableSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/PostTableSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeders/UserTableSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/UserTableSeeder.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -175,7 +185,7 @@
       <option name="presentableId" value="Default" />
       <updated>1606170384840</updated>
       <workItem from="1606170385964" duration="958000" />
-      <workItem from="1606232254224" duration="8210000" />
+      <workItem from="1606232254224" duration="11576000" />
     </task>
     <servers />
   </component>
@@ -195,6 +205,10 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="2419" y="167" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1606266825000">
+      <screen x="1920" y="0" width="1536" height="824" />
+    </state>
+    <state x="2419" y="167" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1536.824/1920.0.1536.824@1920.0.1536.824" timestamp="1606266825000" />
     <state x="2469" y="167" key="FileChooserDialogImpl" timestamp="1606260664462">
       <screen x="1920" y="0" width="1536" height="824" />
     </state>

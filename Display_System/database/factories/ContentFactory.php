@@ -3,6 +3,7 @@
 namespace Database\Factories;
 
 use App\Models\Content;
+use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class ContentFactory extends Factory
@@ -22,7 +23,9 @@ class ContentFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'description'=>$this->faker->paragraph,
+            'image'=>$this->faker->imageUrl(),
+            'user_id' => User::inRandomOrder()->first()->id,
         ];
     }
 }

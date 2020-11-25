@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Display;
 use Illuminate\Database\Seeder;
 
 class DisplayTableSeeder extends Seeder
@@ -13,6 +14,8 @@ class DisplayTableSeeder extends Seeder
      */
     public function run()
     {
-        //
+        Display::factory()
+            ->times(5)
+            ->create();
     }
 }
