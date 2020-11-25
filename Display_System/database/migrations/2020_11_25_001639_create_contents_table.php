@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateDisplaysTable extends Migration
+class CreateContentsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,17 +13,14 @@ class CreateDisplaysTable extends Migration
      */
     public function up()
     {
-        Schema::create('displays', function (Blueprint $table) {
+        Schema::create('contents', function (Blueprint $table) {
             $table->id('id');
-            $table->string('name_of_display');
-            $table->LongText('description');
-            $table->string('location');
-            $table->string('display_resolution');
-
-            $table->foreignId('user_id')->constrained('users')
+            $table->longText('description');
+            $table->string('image')->nullable();
+            $table->foreignId('user_id')
+                ->constrained('users')
                 ->onDelete('cascade')
                 ->onUpdate('cascade');
-
             $table->timestamps();
         });
     }
@@ -35,6 +32,6 @@ class CreateDisplaysTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('displays');
+        Schema::dropIfExists('contents');
     }
 }
