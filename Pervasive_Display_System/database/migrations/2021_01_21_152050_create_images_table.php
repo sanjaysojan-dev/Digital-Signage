@@ -7,14 +7,16 @@ use Illuminate\Support\Facades\Schema;
 class CreateImagesTable extends Migration
 {
     /**
-     * Run the migrations.
+     * Migration to create 'images' table
      *
      * @return void
      */
     public function up()
     {
         Schema::create('images', function (Blueprint $table) {
-            $table->id();
+            $table->id('id');
+            $table->string('filename');
+            $table->morphs('imageable');
             $table->timestamps();
         });
     }

@@ -7,14 +7,23 @@ use Illuminate\Support\Facades\Schema;
 class CreateDisplayNodesTable extends Migration
 {
     /**
-     * Run the migrations.
+     * Migration to create 'display_node' table
      *
      * @return void
      */
     public function up()
     {
         Schema::create('display_nodes', function (Blueprint $table) {
-            $table->id();
+            $table->id('id');
+            $table->string('node_name');
+            $table->LongText('node_description');
+            $table->string('display_resolution');
+
+            $table->foreignId('user_id')
+                ->constrained('users')
+                ->onDelete('cascade')
+                ->onUpdate('cascade');
+
             $table->timestamps();
         });
     }

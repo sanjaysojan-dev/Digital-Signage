@@ -7,15 +7,21 @@ use Illuminate\Support\Facades\Schema;
 class CreateCommentsTable extends Migration
 {
     /**
-     * Run the migrations.
+     * Migration to create 'comments' table
      *
      * @return void
      */
     public function up()
     {
         Schema::create('comments', function (Blueprint $table) {
-            $table->id();
+            $table->id('id');
+            $table->LongText('comment_description');
             $table->timestamps();
+
+            $table->foreignId('user_id')
+                ->constrained('users')
+                ->onUpdate('cascade')
+                ->onDelete('cascade');
         });
     }
 
