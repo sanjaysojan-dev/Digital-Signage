@@ -10,6 +10,11 @@
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 bg-white border-b border-gray-200">
                    User Displays
+                    <div class="flex items-center space-x-4 justify-end mt-4 top-auto">
+                        <a class="btn bg-blue-600 text-gray-200 px-2 py-2 rounded-md"
+                           href="{{ route('imageSlider')}}">Image Slider</a>
+                    </div>
+                </div>
                 </div>
             </div>
         </div>

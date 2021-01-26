@@ -21,6 +21,11 @@ Route::get('userDisplays', function () {
     return view('pages.user-display-nodes');
 })->name('userDisplays');
 
+Route::get('imageSlider', function () {
+    return view('pages.image-slider');
+})->name('imageSlider');
+
+
 
 Route::get('/dashboard', function () {
     return view('pages.dashboard');
