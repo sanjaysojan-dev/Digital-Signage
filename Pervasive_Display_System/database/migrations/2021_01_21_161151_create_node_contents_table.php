@@ -17,12 +17,12 @@ class CreateNodeContentsTable extends Migration
 
             $table->id('id');
 
-            $table->foreignId('node_id')
+            $table->foreignId('display_node_id')
                 ->constrained('display_nodes')
                 ->onDelete('cascade')
                 ->onUpdate('cascade');
 
-            $table->foreignId('display_contents')
+            $table->foreignId('display_content_id')
                 ->constrained('display_contents')
                 ->onDelete('cascade')
                 ->onUpdate('cascade');
