@@ -13,22 +13,52 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+/**
+ *
+ */
 Route::get('/', function () {
     return view('pages.wiki');
 })->name('wiki');
 
+/**
+ *
+ */
+Route::get('dashboard', function () {
+    return view('pages.user-dashboard');
+})->middleware(['auth'])->name('userDashboard');
+
+/**
+ *
+ */
+Route::get('allDisplays', function () {
+    return view('pages.available-displays');
+})->name('allDisplays');
+
+/**
+ *
+ */
 Route::get('userDisplays', function () {
     return view('pages.user-display-nodes');
 })->name('userDisplays');
 
+/**
+ *
+ */
+Route::get('userContent', function () {
+    return view('pages.user-content-upload');
+})->name('userContent');
+
+
+Route::get('forum', function () {
+    return view('pages.forum');
+})->name('forum');
+
+/**
+ *
+ */
 Route::get('imageSlider', function () {
     return view('pages.image-slider');
 })->name('imageSlider');
 
-
-
-Route::get('/dashboard', function () {
-    return view('pages.dashboard');
-})->middleware(['auth'])->name('dashboard');
 
 require __DIR__ . '/auth.php';
