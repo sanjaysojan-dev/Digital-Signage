@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\DisplayContent;
+use App\Models\Image;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class NodeContentController extends Controller
 {
@@ -29,7 +32,7 @@ class NodeContentController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -40,14 +43,37 @@ class NodeContentController extends Controller
             'image_upload' => 'image|nullable| max:1999'
         ]);
 
+        //dd($validatedData);
+        if ($request->hasFile('image_upload')) {
 
+            $fullFileName = $request->file('image_upload')->getClientOriginalName();
+            $filename = pathinfo($fullFileName, PATHINFO_FILENAME);
+            $fileExtension = $request->file('image_upload')->getClientOriginalExtension();
+            $fileNameToStore = $filename . '_' . time() . '.' . $fileExtension;
+            $request->file('image_upload')->storeAs('public/images', $fileNameToStore);
+           // dd($fileNameToStore);
 
+            $image = new Image(['filename' => $fileNameToStore]);
+
+            $displayContent = new DisplayContent();
+            $displayContent->content_title = $validatedData['contentTitle'];
+            $displayContent->content_description = $validatedData['contentDescription'];
+            $displayContent->user_id = Auth::user()->id;
+
+            $displayContent->save();
+            $displayContent->image()->save($image);
+
+        } else {
+            $fileNameToStore = 'noImageUploaded.jpg';
+        }
+
+        return redirect()->route('userContent');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
@@ -58,7 +84,7 @@ class NodeContentController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
@@ -69,8 +95,8 @@ class NodeContentController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param \Illuminate\Http\Request $request
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
@@ -81,7 +107,7 @@ class NodeContentController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)

@@ -1,7 +1,7 @@
 <!-- component -->
 <div class="postForm">
     <p class="text-white font-medium">Create Movie Review</p>
-    <form class="max-w-xl m-4 p-10 bg-white rounded shadow-xl" method="POST" action=""
+    <form class="max-w-xl m-4 p-10 bg-white rounded shadow-xl" method="POST" action="{{route('storeContent')}}"
           enctype="multipart/form-data">
         @csrf
 

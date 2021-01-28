@@ -48,6 +48,12 @@ Route::get('userContent', function () {
     return view('pages.user-content-upload');
 })->name('userContent');
 
+/**
+ *
+ */
+Route::post('storeContent', 'App\Http\Controllers\NodeContentController@store')
+    ->middleware(['auth'])->name('storeContent');
+
 
 Route::get('forum', function () {
     return view('pages.forum');
