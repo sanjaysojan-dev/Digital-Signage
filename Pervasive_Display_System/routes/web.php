@@ -61,10 +61,16 @@ Route::get('forum', function () {
 
 /**
  *
- */
 Route::get('imageSlider', function () {
     return view('pages.image-slider');
-})->name('imageSlider');
+}) ->middleware(['auth'])->name('imageSlider');
+*/
+
+/**
+ *
+ */
+Route::get('imageSlider', 'App\Http\Controllers\NodeContentController@showAllNodeContent')
+    ->middleware(['auth'])->name('imageSlider');
 
 
 require __DIR__ . '/auth.php';

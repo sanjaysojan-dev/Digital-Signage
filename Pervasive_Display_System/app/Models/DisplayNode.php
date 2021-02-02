@@ -24,7 +24,7 @@ class DisplayNode extends Model
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
      */
-    public function genres()
+    public function contents()
     {
         return $this->belongsToMany('App\Models\DisplayContent','node_contents',
             'display_node_id','display_content_id');

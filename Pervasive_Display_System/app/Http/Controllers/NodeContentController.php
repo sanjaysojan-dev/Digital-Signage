@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\DisplayContent;
 use App\Models\Image;
+use App\Models\NodeContent;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -43,7 +45,6 @@ class NodeContentController extends Controller
             'image_upload' => 'image|nullable| max:1999'
         ]);
 
-        //dd($validatedData);
         if ($request->hasFile('image_upload')) {
 
             $fullFileName = $request->file('image_upload')->getClientOriginalName();
@@ -51,7 +52,6 @@ class NodeContentController extends Controller
             $fileExtension = $request->file('image_upload')->getClientOriginalExtension();
             $fileNameToStore = $filename . '_' . time() . '.' . $fileExtension;
             $request->file('image_upload')->storeAs('public/images', $fileNameToStore);
-           // dd($fileNameToStore);
 
             $image = new Image(['filename' => $fileNameToStore]);
 
@@ -68,6 +68,15 @@ class NodeContentController extends Controller
         }
 
         return redirect()->route('userContent');
+    }
+
+    /**
+     *
+     */
+    public function showAllNodeContent (){
+        $allNodeContent = User::findOrfail(Auth::user()->id)->displayContents;
+        return view('pages.image-slider', compact('allNodeContent'));
+
     }
 
     /**

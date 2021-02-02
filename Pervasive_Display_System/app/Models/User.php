@@ -40,4 +40,31 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    /**
+     * posts return many posts
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function posts(){
+        return $this->hasMany('App\Models\Post');
+    }
+
+    /**
+     * Comments return many comments
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function comments(){
+        return $this->hasMany('App\Models\Comment');
+    }
+
+
+    public function displayContents(){
+        return $this->hasMany('App\Models\DisplayContent');
+    }
+
+
+
+
 }
