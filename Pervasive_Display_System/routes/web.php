@@ -41,6 +41,15 @@ Route::get('userDisplays', function () {
     return view('pages.user-display-nodes');
 })->name('userDisplays');
 
+
+/**
+ *
+ */
+Route::post('storeDisplay', 'App\Http\Controllers\NodeDisplayController@store')
+    ->middleware(['auth'])->name('storeDisplay');
+
+
+
 /**
  *
  */

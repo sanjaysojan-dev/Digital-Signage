@@ -15,9 +15,10 @@ class CreateDisplayNodesTable extends Migration
     {
         Schema::create('display_nodes', function (Blueprint $table) {
             $table->id('id');
-            $table->string('node_name');
+            $table->string('node_title');
+            $table->string('node_location');
+            $table->string('node_mode');
             $table->LongText('node_description');
-            $table->string('display_resolution');
 
             $table->foreignId('user_id')
                 ->constrained('users')
