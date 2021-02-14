@@ -29,10 +29,14 @@ Route::get('dashboard', function () {
 
 /**
  *
- */
-Route::get('allDisplays', function () {
-    return view('pages.available-displays');
+ * Route::get('allDisplays', function () {
+return view('pages.available-displays');
 })->name('allDisplays');
+ */
+
+Route::get('allDisplays', 'App\Http\Controllers\NodeDisplayController@index')
+    ->middleware(['auth'])->name('allDisplays');
+
 
 /**
  *

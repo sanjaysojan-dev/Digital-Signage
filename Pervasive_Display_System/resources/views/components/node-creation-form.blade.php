@@ -1,5 +1,5 @@
 <!-- component -->
-<div class="postForm">
+<div class="nodeCreationForm">
     <p class="text-white font-medium">Create Movie Review</p>
     <form class="max-w-xl m-4 p-10 bg-white rounded shadow-xl" method="POST" action="{{route('storeDisplay')}}"
           enctype="multipart/form-data">
@@ -19,17 +19,19 @@
         <span class="text-l text-blue-600 pb-4">~ Enter Location </span>
 
         <div class="mt-2">
-            <textarea class="bg-gray-100 rounded border border-gray-400 leading-normal resize-none w-full h-20 py-2 px-3 font-medium placeholder-gray-700 focus:outline-none focus:bg-white" name="node_description"
-                      placeholder='Description' required></textarea>
+            <textarea
+                class="bg-gray-100 rounded border border-gray-400 leading-normal resize-none w-full h-20 py-2 px-3 font-medium placeholder-gray-700 focus:outline-none focus:bg-white"
+                name="node_description"
+                placeholder='Description' required></textarea>
         </div>
 
         <span class="text-l text-blue-600 pb-4">~ Enter Description </span>
 
         <div class="mt-2">
-                <select name="node_mode" class="w-full">
-                    <option value="Portrait"> Portrait </option>
-                    <option value="Landscape" selected> Landscape </option>
-                </select>
+            <select name="node_mode" class="w-full">
+                <option value="Portrait"> Portrait</option>
+                <option value="Landscape" selected> Landscape</option>
+            </select>
 
         </div>
 

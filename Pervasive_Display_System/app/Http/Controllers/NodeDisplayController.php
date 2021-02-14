@@ -15,7 +15,9 @@ class NodeDisplayController extends Controller
      */
     public function index()
     {
-        //
+        $displayNodes = DisplayNode::orderBy('created_at','desc')->paginate(6);
+        return view('pages.available-displays', compact('displayNodes'));
+
     }
 
     /**
@@ -42,7 +44,6 @@ class NodeDisplayController extends Controller
             'node_description' => 'required'
         ]);
 
-        //dd($request);
         $nodeDisplay = new DisplayNode();
         $nodeDisplay->node_title = $validatedData['node_title'];
         $nodeDisplay->node_location = $validatedData['node_location'];
