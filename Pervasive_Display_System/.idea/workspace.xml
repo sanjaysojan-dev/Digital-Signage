@@ -20,11 +20,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="70d05189-235c-403f-bdb2-cec650f9eeb3" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/NodeDisplayController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/NodeDisplayController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/app.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/components/display-content-form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/components/display-content-form.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/components/node-creation-form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/components/node-creation-form.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/components/node-display-card.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/components/node-display-card.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/pages/available-displays.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/available-displays.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
@@ -190,6 +190,7 @@
       <workItem from="1612452918653" duration="5589000" />
       <workItem from="1612869894322" duration="8755000" />
       <workItem from="1613327517119" duration="6793000" />
+      <workItem from="1613485783935" duration="4728000" />
     </task>
     <servers />
   </component>

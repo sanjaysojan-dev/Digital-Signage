@@ -1,11 +1,7 @@
-<!-- component -->
-<!-- This is an example component -->
-
 <link href="https://unpkg.com/pattern.css" rel="stylesheet">
 
-
 <div class="p-10 md:w-1/3 md:mb-0 mb-6 flex flex-col ">
-    <a href="{{route('wiki')}}">
+    <a href="{{$link}}">
         <div class="pattern-dots-md gray-light">
             <div class="rounded bg-gray-800 p-4 transform translate-x-6 -translate-y-6  ">
                 <div class="flex-grow ">

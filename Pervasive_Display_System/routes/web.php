@@ -37,6 +37,9 @@ return view('pages.available-displays');
 Route::get('allDisplays', 'App\Http\Controllers\NodeDisplayController@index')
     ->middleware(['auth'])->name('allDisplays');
 
+Route::get('showNode/{id}', 'App\Http\Controllers\NodeDisplayController@show')
+    ->middleware(['auth'])->name('showNode');
+
 
 /**
  *

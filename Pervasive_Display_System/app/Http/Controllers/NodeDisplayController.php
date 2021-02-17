@@ -64,7 +64,9 @@ class NodeDisplayController extends Controller
      */
     public function show($id)
     {
-        //
+        $node = DisplayNode::findOrFail($id);
+        //dd($node);
+        return view('pages.node-content-upload', compact('node'));
     }
 
     /**
