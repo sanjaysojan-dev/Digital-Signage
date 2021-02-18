@@ -40,6 +40,9 @@ Route::get('allDisplays', 'App\Http\Controllers\NodeDisplayController@index')
 Route::get('showNode/{id}', 'App\Http\Controllers\NodeDisplayController@show')
     ->middleware(['auth'])->name('showNode');
 
+Route::post('/{id}', 'App\Http\Controllers\NodeDisplayController@uploadToNode')
+    ->middleware(['auth'])->name('uploadContent');
+
 
 /**
  *

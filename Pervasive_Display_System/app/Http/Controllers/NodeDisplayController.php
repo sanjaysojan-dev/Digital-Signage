@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\DisplayContent;
 use App\Models\DisplayNode;
+use App\Models\NodeContent;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -66,8 +68,28 @@ class NodeDisplayController extends Controller
     {
         $node = DisplayNode::findOrFail($id);
         //dd($node);
-        return view('pages.node-content-upload', compact('node'));
+        $uploadedContents = DisplayContent::where('user_id', Auth::user()->id)->get();
+        return view('pages.node-content-upload', compact('node', 'uploadedContents'));
     }
+
+    /**
+     * @param Request $request
+     * @param $id
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function uploadToNode (Request $request, $id){
+
+        $node = DisplayNode::findOrFail($id);
+        $content = DisplayContent::findOrFail($request['node_content']);
+
+        $NodeContent = new NodeContent();
+        $NodeContent->display_node_id = $node->id;
+        $NodeContent->display_content_id = $content->id;
+        $NodeContent->save();
+
+        return redirect()->route('allDisplays');
+    }
+
 
     /**
      * Show the form for editing the specified resource.

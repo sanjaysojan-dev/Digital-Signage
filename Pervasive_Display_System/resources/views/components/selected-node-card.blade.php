@@ -28,10 +28,10 @@
     <!-- Collapsed content -->
     <div class="w-full flex flex-col mt-8" :class="{'hidden': !open}">
         <hr class="mb-4 border-gray-700">
-        <p>Description: {{$nodeDescription}} </p>
+
         <ul class="list-disc ml-4 mt-2">
-            <li>Location: {{$nodeLocation}}
-            </li>
+            <li>Location: {{$nodeDescription}}</li>
+            <li>Location: {{$nodeLocation}}</li>
         </ul>
     </div>
 </div>

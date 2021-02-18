@@ -23,6 +23,24 @@
                             {{$node->node_description}}
                         @endslot
                     @endcomponent
+
+                    <form method="POST" action="{{route('uploadContent', ['id' => $node->id])}}" enctype="multipart/form-data">
+                        <div class="flex items-center space-x-4 justify-start top-auto">
+                            <div class="ml-10">
+                                @csrf
+                                <select name="node_content" class="w-full">
+                                    @foreach($uploadedContents as $uploads)
+                                        <option value={{$uploads->id}}> {{$uploads->content_title}}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+                            <button class="m-10 bg-yellow-500 text-gray-900 px-2 py-2 rounded-md mr-2"
+                                    type="submit">Post to Node
+                            </button>
+                        </div>
+                    </form>
+
+
                 </div>
             </div>
         </div>
