@@ -30,8 +30,9 @@
         <hr class="mb-4 border-gray-700">
 
         <ul class="list-disc ml-4 mt-2">
-            <li>Location: {{$nodeDescription}}</li>
+            <li>Description: {{$nodeDescription}}</li>
             <li>Location: {{$nodeLocation}}</li>
+            <a href="{{$link}}"><li>{{$url}}</li></a>
         </ul>
     </div>
 </div>

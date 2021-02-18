@@ -50,7 +50,7 @@ Route::get('/', function () {
 
 require __DIR__.'/auth.php';
 
-Route::get('imageSlider', 'App\Http\Controllers\NodeContentController@showAllNodeContent')
+Route::get('imageSlider/{id}', 'App\Http\Controllers\NodeContentController@showAllNodeContent')
     ->middleware(['auth'])->name('imageSlider');
 
 Route::get('showNode/{id}', 'App\Http\Controllers\NodeDisplayController@show')

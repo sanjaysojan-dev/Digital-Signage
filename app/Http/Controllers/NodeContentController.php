@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\DisplayContent;
+use App\Models\DisplayNode;
 use App\Models\Image;
 use App\Models\NodeContent;
 use App\Models\User;
@@ -73,8 +74,12 @@ class NodeContentController extends Controller
     /**
      *
      */
-    public function showAllNodeContent (){
-        $allNodeContent = User::findOrfail(Auth::user()->id)->displayContents;
+    public function showAllNodeContent ($id){
+
+        $allNodeContent = DisplayNode::findOrFail($id)->contents;
+
+
+        //$allNodeContent = User::findOrfail(Auth::user()->id)->displayContents;
         return view('pages.image-slider', compact('allNodeContent'));
 
     }

@@ -22,9 +22,16 @@
                         @slot('nodeDescription')
                             {{$node->node_description}}
                         @endslot
+                        @slot('link')
+                            {{route('imageSlider', ['id' => $node->id])}}
+                        @endslot
+                            @slot('url')
+                                display_system.test/imageSlider/{{$node->id}}
+                            @endslot
                     @endcomponent
 
-                    <form method="POST" action="{{route('uploadContent', ['id' => $node->id])}}" enctype="multipart/form-data">
+                    <form method="POST" action="{{route('uploadContent', ['id' => $node->id])}}"
+                          enctype="multipart/form-data">
                         <div class="flex items-center space-x-4 justify-start top-auto">
                             <div class="ml-10">
                                 @csrf
@@ -39,8 +46,6 @@
                             </button>
                         </div>
                     </form>
-
-
                 </div>
             </div>
         </div>
