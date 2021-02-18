@@ -14,11 +14,51 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
-});
+    return view('pages.wiki');
+})->name('wiki');
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
+Route::get('dashboard', function () {
+    return view('pages.user-dashboard');
+})->middleware(['auth'])->name('userDashboard');
+
+Route::get('allDisplays', 'App\Http\Controllers\NodeDisplayController@index')
+    ->middleware(['auth'])->name('allDisplays');
+
+Route::get('userDisplays', function () {
+    return view('pages.user-display-nodes');
+})->middleware(['auth'])->name('userDisplays');
+
+Route::post('storeDisplay', 'App\Http\Controllers\NodeDisplayController@store')
+    ->middleware(['auth'])->name('storeDisplay');
+
+Route::get('userContent', function () {
+    return view('pages.user-content-upload');
+})->middleware(['auth'])->name('userContent');
+
+Route::post('storeContent', 'App\Http\Controllers\NodeContentController@store')
+    ->middleware(['auth'])->name('storeContent');
+
+Route::get('forum', function () {
+    return view('pages.forum');
+})->middleware(['auth'])->name('forum');
+
+
+Route::get('/', function () {
+    return view('pages.wiki');
+})->name('wiki');
+
 
 require __DIR__.'/auth.php';
+
+Route::get('imageSlider', 'App\Http\Controllers\NodeContentController@showAllNodeContent')
+    ->middleware(['auth'])->name('imageSlider');
+
+Route::get('showNode/{id}', 'App\Http\Controllers\NodeDisplayController@show')
+    ->middleware(['auth'])->name('showNode');
+
+Route::post('uploadContent/{id}', 'App\Http\Controllers\NodeDisplayController@uploadToNode')
+    ->middleware(['auth'])->name('uploadContent');
+
+
+
+
