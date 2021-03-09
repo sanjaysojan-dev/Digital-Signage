@@ -18,7 +18,6 @@
                         <div>
                             <div class="max-w-6xl mx-auto px-5 py-5">
                                 <div class="flex flex-wrap sm:-m-4 -mx-4 -mb-5 -mt-4 ">
-
                                     @foreach($displayNodes as $display)
                                         @component('components.node-display-card')
                                             @slot('link')

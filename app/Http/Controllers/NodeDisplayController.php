@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\DisplayContent;
 use App\Models\DisplayNode;
 use App\Models\NodeContent;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -20,6 +21,15 @@ class NodeDisplayController extends Controller
         $displayNodes = DisplayNode::orderBy('created_at','desc')->paginate(6);
         return view('pages.available-displays', compact('displayNodes'));
 
+    }
+
+    /**
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
+     */
+    public function showUserNodes ()
+    {
+        $nodes = User::find(Auth::user()->id)->nodes;
+        return view ('pages.user-display-nodes', compact('nodes'));
     }
 
     /**

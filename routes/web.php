@@ -24,9 +24,10 @@ Route::get('dashboard', function () {
 Route::get('allDisplays', 'App\Http\Controllers\NodeDisplayController@index')
     ->middleware(['auth'])->name('allDisplays');
 
-Route::get('userDisplays', function () {
-    return view('pages.user-display-nodes');
-})->middleware(['auth'])->name('userDisplays');
+
+Route::get('userDisplays', 'App\Http\Controllers\NodeDisplayController@showUserNodes')
+    ->middleware(['auth'])->name('userDisplays');
+
 
 Route::post('storeDisplay', 'App\Http\Controllers\NodeDisplayController@store')
     ->middleware(['auth'])->name('storeDisplay');
@@ -50,8 +51,7 @@ Route::get('/', function () {
 
 require __DIR__.'/auth.php';
 
-Route::get('imageSlider/{id}', 'App\Http\Controllers\NodeContentController@showAllNodeContent')
-    ->middleware(['auth'])->name('imageSlider');
+Route::get('imageSlider/{id}', 'App\Http\Controllers\NodeContentController@showAllNodeContent')->name('imageSlider');
 
 Route::get('showNode/{id}', 'App\Http\Controllers\NodeDisplayController@show')
     ->middleware(['auth'])->name('showNode');
