@@ -47,4 +47,11 @@ class User extends Authenticatable
     public function nodes () {
         return $this->hasMany('App\Models\DisplayNode');
     }
+
+    /**
+     *
+     */
+    public function content () {
+       return $this->hasMany('App\Models\DisplayContent');
+    }
 }

@@ -22,6 +22,13 @@ class NodeContentController extends Controller
         //
     }
 
+    public function showUserContent (){
+
+        $userContent = User::find(Auth::user()->id)->content;
+        //dd($userContent);
+        return view('pages.user-content-upload', compact('userContent'));
+    }
+
     /**
      * Show the form for creating a new resource.
      *

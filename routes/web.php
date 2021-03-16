@@ -32,9 +32,9 @@ Route::get('userDisplays', 'App\Http\Controllers\NodeDisplayController@showUserN
 Route::post('storeDisplay', 'App\Http\Controllers\NodeDisplayController@store')
     ->middleware(['auth'])->name('storeDisplay');
 
-Route::get('userContent', function () {
-    return view('pages.user-content-upload');
-})->middleware(['auth'])->name('userContent');
+Route::get('userContent', 'App\Http\Controllers\NodeContentController@showUserContent')
+    ->middleware(['auth'])->name('userContent');
+
 
 Route::post('storeContent', 'App\Http\Controllers\NodeContentController@store')
     ->middleware(['auth'])->name('storeContent');

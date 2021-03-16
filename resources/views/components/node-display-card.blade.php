@@ -7,7 +7,7 @@
                 <div class="flex-grow ">
                     <h2 class=" text-xl title-font font-medium mb-3">{{$nodeTitle}}</h2>
                     <h2 class=" text-xl title-font font-medium mb-3">Location: {{$nodeLocation}}</h2>
-                    <p class="leading-relaxed text-sm text-justify">{{$nodeDescription}}</p>
+                    <p class="truncate leading-relaxed text-sm text-justify">{{$nodeDescription}}</p>
                 </div>
             </div>
         </div>
