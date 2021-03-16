@@ -22,10 +22,12 @@ class NodeContentController extends Controller
         //
     }
 
+    /**
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
+     */
     public function showUserContent (){
 
         $userContent = User::find(Auth::user()->id)->content;
-        //dd($userContent);
         return view('pages.user-content-upload', compact('userContent'));
     }
 

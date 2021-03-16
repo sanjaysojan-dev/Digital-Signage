@@ -5,7 +5,7 @@
         <div class="pattern-dots-md gray-light">
             <div class="rounded bg-gray-800 p-4 transform translate-x-6 -translate-y-6  ">
                 <div class="flex-grow ">
-                    <h2 class=" text-xl title-font font-medium mb-3">{{$nodeTitle}}</h2>
+                    <h2 class="font-bold text-xl title-font font-medium mb-3">{{$nodeTitle}}</h2>
                     <h2 class=" text-xl title-font font-medium mb-3">Location: {{$nodeLocation}}</h2>
                     <p class="truncate leading-relaxed text-sm text-justify">{{$nodeDescription}}</p>
                 </div>

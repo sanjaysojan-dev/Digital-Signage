@@ -1,14 +1,11 @@
-<div class="max-w-xs rounded overflow-hidden shadow-lg my-2">
-    <img class="w-full" src="https://tailwindcss.com/img/card-top.jpg" alt="Sunset in the mountains">
+<div class="p-5">
+<div class="max-w-xs rounded overflow-hidden shadow-lg my-10  bg-gray-800 ">
+    <img class="w-full h-44" src="{{$image}}" alt="Image Upload">
     <div class="px-6 py-4">
-        <div class="font-bold text-xl mb-2">The Coldest Sunset</div>
-        <p class="text-grey-darker text-base">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis eaque, exercitationem praesentium nihil.
+        <div class="font-bold text-xl mb-2">{{$title}}</div>
+        <p class="truncate text-grey-darker text-base">
+           {{$description}}
         </p>
     </div>
-    <div class="px-6 py-4">
-        <span class="inline-block bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker mr-2">#photography</span>
-        <span class="inline-block bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker mr-2">#travel</span>
-        <span class="inline-block bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker">#winter</span>
-    </div>
+</div>
 </div>
