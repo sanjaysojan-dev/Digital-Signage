@@ -18,7 +18,7 @@ class NodeDisplayController extends Controller
      */
     public function index()
     {
-        $displayNodes = DisplayNode::orderBy('created_at','desc')->paginate(6);
+        $displayNodes = DisplayNode::orderBy('created_at', 'desc')->paginate(6);
         return view('pages.available-displays', compact('displayNodes'));
 
     }
@@ -26,10 +26,10 @@ class NodeDisplayController extends Controller
     /**
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
-    public function showUserNodes ()
+    public function showUserNodes()
     {
         $nodes = User::find(Auth::user()->id)->nodes;
-        return view ('pages.user-display-nodes', compact('nodes'));
+        return view('pages.user-display-nodes', compact('nodes'));
     }
 
     /**
@@ -45,7 +45,7 @@ class NodeDisplayController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -71,7 +71,7 @@ class NodeDisplayController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
@@ -87,7 +87,8 @@ class NodeDisplayController extends Controller
      * @param $id
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function uploadToNode (Request $request, $id){
+    public function uploadToNode(Request $request, $id)
+    {
 
         $node = DisplayNode::findOrFail($id);
         $content = DisplayContent::findOrFail($request['node_content']);
@@ -104,7 +105,7 @@ class NodeDisplayController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
@@ -118,8 +119,8 @@ class NodeDisplayController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param \Illuminate\Http\Request $request
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
@@ -144,11 +145,13 @@ class NodeDisplayController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
     {
-        //
+        $node = DisplayNode::findOrFail($id);
+        $node->delete();
+        return redirect()->route('userDisplays');
     }
 }

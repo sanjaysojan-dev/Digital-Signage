@@ -33,7 +33,7 @@
                                     <a class="btn bg-blue-600 text-gray-200 px-2 py-2 rounded-md"
                                        href="{{route('editNodeDisplay', ['id' => $display->id])}}">Edit</a>
 
-                                    <form action="" method="post">
+                                    <form action="{{route('deleteNodeDisplay', ['id'=>$display->id])}}" method="post">
                                         @csrf
                                         @method('DELETE')
                                         <button class=" bg-red-500 text-gray-900 px-2 py-2 rounded-md mr-2"

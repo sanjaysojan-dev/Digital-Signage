@@ -35,6 +35,9 @@ Route::get('editNodeDisplay/{id}', 'App\Http\Controllers\NodeDisplayController@e
 Route::put('updateNodeDisplay/{id}', 'App\Http\Controllers\NodeDisplayController@update')
     ->middleware(['auth'])->name('updateNodeDisplay');
 
+Route::delete('deleteNodeDisplay/{id}', 'App\Http\Controllers\NodeDisplayController@destroy')
+    ->middleware(['auth'])->name('deleteNodeDisplay');
+
 
 
 
