@@ -31,7 +31,7 @@
                                 @endcomponent
                                 <div class="flex items-center space-x-4 justify-center mt-4">
                                     <a class="btn bg-blue-600 text-gray-200 px-2 py-2 rounded-md"
-                                       href="">Edit</a>
+                                       href="{{route('editNodeDisplay', ['id' => $display->id])}}">Edit</a>
 
                                     <form action="" method="post">
                                         @csrf

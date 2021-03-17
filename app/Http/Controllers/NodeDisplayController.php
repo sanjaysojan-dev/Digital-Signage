@@ -109,7 +109,10 @@ class NodeDisplayController extends Controller
      */
     public function edit($id)
     {
-        //
+        $user = Auth::user();
+        $selectedNode = DisplayNode::findOrFail($id);
+
+        return view('pages.edit-node', compact('selectedNode'));
     }
 
     /**
