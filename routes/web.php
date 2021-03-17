@@ -32,6 +32,12 @@ Route::get('userDisplays', 'App\Http\Controllers\NodeDisplayController@showUserN
 Route::get('editNodeDisplay/{id}', 'App\Http\Controllers\NodeDisplayController@edit')
     ->middleware(['auth'])->name('editNodeDisplay');
 
+Route::put('updateNodeDisplay/{id}', 'App\Http\Controllers\NodeDisplayController@update')
+    ->middleware(['auth'])->name('updateNodeDisplay');
+
+
+
+
 
 Route::post('storeDisplay', 'App\Http\Controllers\NodeDisplayController@store')
     ->middleware(['auth'])->name('storeDisplay');

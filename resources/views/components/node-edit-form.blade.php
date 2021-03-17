@@ -1,6 +1,6 @@
 <!-- component -->
 <div class="nodeEditForm">
-    <form class="max-w-xl m-4 p-10 bg-white rounded shadow-xl" method="POST" action=""
+    <form class="max-w-xl m-4 p-10 bg-white rounded shadow-xl" method="POST" action="{{$link}}"
           enctype="multipart/form-data">
         @csrf
 
@@ -29,7 +29,8 @@
         {{$slot}}
 
         <div class="mt-2">
-            <button class="px-4 py-1 text-white font-light tracking-wider bg-gray-900 rounded" type="submit">POST
+            @method('PUT')
+            <button class="px-4 py-1 text-white font-light tracking-wider bg-gray-900 rounded" type="submit">UPDATE
             </button>
         </div>
     </form>

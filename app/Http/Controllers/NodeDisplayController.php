@@ -124,7 +124,21 @@ class NodeDisplayController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $validatedData = $request->validate([
+            'node_title' => 'required|max:255',
+            'node_location' => 'required',
+            'node_description' => 'required'
+        ]);
+
+        $nodeDisplay = DisplayNode::find($id);
+        $nodeDisplay->node_title = $validatedData['node_title'];
+        $nodeDisplay->node_location = $validatedData['node_location'];
+        $nodeDisplay->node_description = $validatedData['node_description'];
+        $nodeDisplay->node_mode = $request['node_mode'];
+        $nodeDisplay->user_id = Auth::user()->id;
+        $nodeDisplay->save();
+
+        return redirect()->route('userDisplays');
     }
 
     /**
