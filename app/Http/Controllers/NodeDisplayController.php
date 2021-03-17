@@ -150,8 +150,8 @@ class NodeDisplayController extends Controller
      */
     public function destroy($id)
     {
-        $node = DisplayNode::findOrFail($id);
-        $node->delete();
+       $display = DisplayNode::findOrFail($id);
+        $display->delete();
         return redirect()->route('userDisplays');
     }
 }

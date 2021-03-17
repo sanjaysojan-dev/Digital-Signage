@@ -22,6 +22,10 @@
     <list default="true" id="63e3926f-c832-4fed-adf0-ff6e0b611f1d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/NodeContentController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/NodeContentController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/NodeDisplayController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/NodeDisplayController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/components/content-edit-form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/components/content-edit-form.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/components/display-content-form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/components/display-content-form.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/pages/edit-content.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/edit-content.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/pages/user-content-upload.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/user-content-upload.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
@@ -188,7 +192,7 @@
       <workItem from="1614945613454" duration="919000" />
       <workItem from="1615289432785" duration="5104000" />
       <workItem from="1615893373909" duration="8672000" />
-      <workItem from="1615979042762" duration="9533000" />
+      <workItem from="1615979042762" duration="14931000" />
     </task>
     <servers />
   </component>

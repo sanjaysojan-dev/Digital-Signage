@@ -11,6 +11,15 @@
                 <div class="p-6 text-gray-900 bg-gray-900">
                     @csrf
                     @component('components.content-edit-form')
+                        @slot('link')
+                            {{route('updateNodeContent', ['id' => $content->id])}}
+                        @endslot
+                        @slot('title')
+                            {{$content->content_title}}
+                        @endslot
+                        @slot('description')
+                            {{$content->content_description}}
+                        @endslot
                     @endcomponent
 
                 </div>

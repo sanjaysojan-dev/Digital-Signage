@@ -25,7 +25,8 @@ class NodeContentController extends Controller
     /**
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
-    public function showUserContent (){
+    public function showUserContent()
+    {
 
         $userContent = User::find(Auth::user()->id)->content;
         return view('pages.user-content-upload', compact('userContent'));
@@ -74,7 +75,9 @@ class NodeContentController extends Controller
             $displayContent->image()->save($image);
 
         } else {
-            $fileNameToStore = 'noImageUploaded.jpg';
+            //Session header saying that no image was selected
+            return redirect()->route('userContent');
+
         }
 
         return redirect()->route('userContent');
@@ -83,7 +86,8 @@ class NodeContentController extends Controller
     /**
      *
      */
-    public function showAllNodeContent ($id){
+    public function showAllNodeContent($id)
+    {
 
         $allNodeContent = DisplayNode::findOrFail($id)->contents;
 
@@ -124,7 +128,34 @@ class NodeContentController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $validatedData = $request->validate([
+            'contentTitle' => 'required|max:255',
+            'contentDescription' => 'required',
+            'image_upload' => 'image|nullable| max:1999'
+        ]);
+
+        $updatedContent = DisplayContent::findOrFail($id);
+        $updatedContent->content_title = $validatedData['contentTitle'];
+        $updatedContent->content_description = $validatedData['contentDescription'];
+
+        if ($request->hasFile('image_upload')) {
+            $fullFileName = $request->file('image_upload')->getClientOriginalName();
+            $filename = pathinfo($fullFileName, PATHINFO_FILENAME);
+            $fileExtension = $request->file('image_upload')->getClientOriginalExtension();
+            $fileNameToStore = $filename . '_' . time() . '.' . $fileExtension;
+
+            unlink('storage/images/' . $updatedContent->image->filename);
+            Image::where('imageable_type', 'App\Models\DisplayContent')->where('imageable_id', $updatedContent->id)->delete();
+
+
+            $image = new Image(['filename' => $fileNameToStore]);
+            $updatedContent->image()->save($image);
+            $request->file('image_upload')->storeAs('public/images', $fileNameToStore);
+        }
+
+        $updatedContent->save();
+        return redirect()->route('userContent');
+
     }
 
     /**
@@ -135,6 +166,10 @@ class NodeContentController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $selectedNode = DisplayContent::findOrFail($id);
+        unlink('storage/images/' . $selectedNode->image->filename);
+        $selectedNode->delete();
+
+        return redirect()->route('userContent');
     }
 }

@@ -1,6 +1,5 @@
 <!-- component -->
 <div class="contentCreationForm">
-    <p class="text-white font-medium">Create Movie Review</p>
     <form class="max-w-xl m-4 p-10 bg-white rounded shadow-xl" method="POST" action="{{route('storeContent')}}"
           enctype="multipart/form-data">
         @csrf
@@ -28,7 +27,7 @@
         <p class="mt-4 text-gray-800 font-medium">Upload Post Image ~ Max Image Size: 2MB </p>
 
         <div class="mt-2">
-            <input type="file" name="image_upload" placeholder="Upload Image">
+            <input type="file" name="image_upload" placeholder="Upload Image" required>
         </div>
 
         <div class="mt-2">

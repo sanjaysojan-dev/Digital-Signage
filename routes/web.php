@@ -56,6 +56,13 @@ Route::post('storeContent', 'App\Http\Controllers\NodeContentController@store')
 Route::get('editNodeContent/{id}', 'App\Http\Controllers\NodeContentController@edit')
     ->middleware(['auth'])->name('editNodeContent');
 
+Route::put('updateNodeContent/{id}', 'App\Http\Controllers\NodeContentController@update')
+    ->middleware(['auth'])->name('updateNodeContent');
+
+Route::delete('deleteNodeContent/{id}','App\Http\Controllers\NodeContentController@destroy')
+    ->middleware(['auth'])->name('deleteNodeContent');
+
+
 Route::get('forum', function () {
     return view('pages.forum');
 })->middleware(['auth'])->name('forum');
