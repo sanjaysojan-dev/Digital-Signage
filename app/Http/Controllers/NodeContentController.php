@@ -87,7 +87,6 @@ class NodeContentController extends Controller
 
         $allNodeContent = DisplayNode::findOrFail($id)->contents;
 
-
         //$allNodeContent = User::findOrfail(Auth::user()->id)->displayContents;
         return view('pages.image-slider', compact('allNodeContent'));
 
@@ -112,7 +111,8 @@ class NodeContentController extends Controller
      */
     public function edit($id)
     {
-        //
+        $content = DisplayContent::findOrFail($id);
+        return view('pages.edit-content', compact('content'));
     }
 
     /**

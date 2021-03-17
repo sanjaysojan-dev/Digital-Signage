@@ -42,15 +42,19 @@ Route::delete('deleteNodeDisplay/{id}', 'App\Http\Controllers\NodeDisplayControl
 
 
 
+
+
 Route::post('storeDisplay', 'App\Http\Controllers\NodeDisplayController@store')
     ->middleware(['auth'])->name('storeDisplay');
 
 Route::get('userContent', 'App\Http\Controllers\NodeContentController@showUserContent')
     ->middleware(['auth'])->name('userContent');
 
-
 Route::post('storeContent', 'App\Http\Controllers\NodeContentController@store')
     ->middleware(['auth'])->name('storeContent');
+
+Route::get('editNodeContent/{id}', 'App\Http\Controllers\NodeContentController@edit')
+    ->middleware(['auth'])->name('editNodeContent');
 
 Route::get('forum', function () {
     return view('pages.forum');
