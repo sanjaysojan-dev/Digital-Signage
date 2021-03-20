@@ -13,7 +13,7 @@
 
         <div class="mt-2">
             <textarea
-                class="bg-gray-100 rounded border border-gray-400 leading-normal resize-none w-full h-20 py-2 px-3 font-medium placeholder-gray-700 focus:outline-none focus:bg-white"
+                class="bg-gray-100 text-gray-700 rounded border border-gray-400 leading-normal resize-none w-full h-20 py-2 px-3 font-medium placeholder-gray-500 focus:outline-none focus:bg-white"
                 name="contentDescription"
                 placeholder='Type Image Description' required></textarea>
         </div>
@@ -26,7 +26,7 @@
 
         <p class="mt-4 text-gray-800 font-medium">Upload Post Image ~ Max Image Size: 2MB </p>
 
-        <div class="mt-2">
+        <div class="mt-2 text-gray-500">
             <input type="file" name="image_upload" placeholder="Upload Image" required>
         </div>
 

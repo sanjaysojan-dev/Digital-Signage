@@ -11,8 +11,6 @@
                 <div class="p-6 text-gray-200 bg-gray-900">
                     @component('components.display-content-form')
                     @endcomponent
-
-
                     <div class="max-w-6xl mx-auto px-20 py-5">
                         <div class="flex flex-wrap sm:-m-4 -mx-4 -mb-5 -mt-4 ">
 
@@ -42,13 +40,10 @@
                                         </button>
                                     </form>
                                 </div>
-
                             @endforeach
                         </div>
                     </div>
                 </div>
-
-
             </div>
         </div>
     </div>

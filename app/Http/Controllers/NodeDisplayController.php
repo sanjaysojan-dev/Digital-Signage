@@ -78,8 +78,26 @@ class NodeDisplayController extends Controller
     {
         $node = DisplayNode::findOrFail($id);
         //dd($node);
-        $uploadedContents = DisplayContent::where('user_id', Auth::user()->id)->get();
-        return view('pages.node-content-upload', compact('node', 'uploadedContents'));
+
+        if (Auth::user()->id == $node->user_id) {
+            $contentToDisplay = $node->contents;
+        } else {
+            $nodeContents = $node->contents;
+            //$contentToDisplay = $nodeContents->where('user_id', Auth::user()->id)->get();
+            $contentToDisplay = $nodeContents->filter(function ($value, $key) {
+                if ($value['user_id'] == Auth::user()->id) {
+                 return true;
+                }
+            });
+
+            $contentToDisplay->all();
+            //dd($contentToDisplay);
+        }
+
+        $userContents = DisplayContent::where('user_id', Auth::user()->id)->get();
+
+
+        return view('pages.node-content-upload', compact('node', 'userContents', 'contentToDisplay'));
     }
 
     /**
@@ -150,7 +168,7 @@ class NodeDisplayController extends Controller
      */
     public function destroy($id)
     {
-       $display = DisplayNode::findOrFail($id);
+        $display = DisplayNode::findOrFail($id);
         $display->delete();
         return redirect()->route('userDisplays');
     }
