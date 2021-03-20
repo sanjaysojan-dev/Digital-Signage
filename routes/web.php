@@ -62,6 +62,11 @@ Route::put('updateNodeContent/{id}', 'App\Http\Controllers\NodeContentController
 Route::delete('deleteNodeContent/{id}','App\Http\Controllers\NodeContentController@destroy')
     ->middleware(['auth'])->name('deleteNodeContent');
 
+Route::delete('removeFromNode/{content_id}/nodeID/{node_id}','App\Http\Controllers\NodeContentController@removeContentFromNode')
+    ->middleware(['auth'])->name('removeFromNode');
+
+
+
 
 Route::get('forum', function () {
     return view('pages.forum');

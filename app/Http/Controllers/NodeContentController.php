@@ -172,4 +172,20 @@ class NodeContentController extends Controller
 
         return redirect()->route('userContent');
     }
+
+    public function removeContentFromNode($content_id, $node_id)
+    {
+
+        $removeContent = NodeContent::where('display_node_id', $node_id)->
+        where('display_content_id', $content_id)->get();
+
+        //dd($removeContent);
+
+        foreach ($removeContent as $content){
+            $content->delete();
+        }
+
+        return redirect()->route('showNode', ['id' => $node_id]);
+
+    }
 }
