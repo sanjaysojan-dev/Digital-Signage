@@ -12,10 +12,6 @@
 
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-nav-link :href="route('userDashboard')" :active="request()->routeIs('userDashboard')">
-                        {{ __('Dashboard') }}
-                    </x-nav-link>
-
                     <x-nav-link :href="route('allDisplays')" :active="request()->routeIs('allDisplays')">
                         {{ __('All Display Nodes') }}
                     </x-nav-link>
@@ -26,10 +22,6 @@
 
                     <x-nav-link :href="route('userContent')" :active="request()->routeIs('userContent')">
                         {{ __('My Uploads') }}
-                    </x-nav-link>
-
-                    <x-nav-link :href="route('forum')" :active="request()->routeIs('forum')">
-                        {{ __('Forum') }}
                     </x-nav-link>
 
                     <x-nav-link :href="route('wiki')" :active="request()->routeIs('wiki')">
