@@ -84,19 +84,17 @@ class NodeDisplayController extends Controller
         } else {
             $nodeContents = $node->contents;
             //$contentToDisplay = $nodeContents->where('user_id', Auth::user()->id)->get();
-            $contentToDisplay = $nodeContents->filter(function ($value, $key) {
+            $contentToDisplay = $nodeContents->filter(function ($value) {
                 if ($value['user_id'] == Auth::user()->id) {
-                 return true;
+                    return true;
                 }
             });
 
             $contentToDisplay->all();
             //dd($contentToDisplay);
         }
-
-        $userContents = DisplayContent::where('user_id', Auth::user()->id)->get();
-
-
+        
+        $userContents = DisplayContent::where('user_id', Auth::user()->id)->get();//All user Contents
         return view('pages.node-content-upload', compact('node', 'userContents', 'contentToDisplay'));
     }
 
@@ -111,12 +109,18 @@ class NodeDisplayController extends Controller
         $node = DisplayNode::findOrFail($id);
         $content = DisplayContent::findOrFail($request['node_content']);
 
-        $NodeContent = new NodeContent();
-        $NodeContent->display_node_id = $node->id;
-        $NodeContent->display_content_id = $content->id;
-        $NodeContent->save();
+        $manyToMany = NodeContent::where('display_node_id', $id)->get();
 
-        return redirect()->route('allDisplays');
+        if ($manyToMany->contains('display_content_id', $content['id'])) {
+            return redirect()->route('showNode', ['id' => $id]);
+        } else {
+            $NodeContent = new NodeContent();
+            $NodeContent->display_node_id = $node->id;
+            $NodeContent->display_content_id = $content->id;
+            $NodeContent->save();
+        }
+
+        return redirect()->route('showNode', ['id' => $id]);
     }
 
 
