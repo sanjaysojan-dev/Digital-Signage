@@ -93,7 +93,7 @@ class NodeDisplayController extends Controller
             $contentToDisplay->all();
             //dd($contentToDisplay);
         }
-        
+
         $userContents = DisplayContent::where('user_id', Auth::user()->id)->get();//All user Contents
         return view('pages.node-content-upload', compact('node', 'userContents', 'contentToDisplay'));
     }

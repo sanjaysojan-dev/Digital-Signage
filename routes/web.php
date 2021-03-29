@@ -17,6 +17,10 @@ Route::get('/', function () {
     return view('pages.wiki');
 })->name('wiki');
 
+Route::get('/Documentation', function () {
+    return view('pages.documentation-page-1');
+})->name('documentation');
+
 Route::get('dashboard', function () {
     return view('pages.user-dashboard');
 })->middleware(['auth'])->name('userDashboard');
