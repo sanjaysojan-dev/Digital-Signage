@@ -21,9 +21,7 @@ Route::get('/Documentation', function () {
     return view('pages.documentation-page-1');
 })->name('documentation');
 
-Route::get('dashboard', function () {
-    return view('pages.user-dashboard');
-})->middleware(['auth'])->name('userDashboard');
+
 
 Route::get('allDisplays', 'App\Http\Controllers\NodeDisplayController@index')
     ->middleware(['auth'])->name('allDisplays');
@@ -70,11 +68,6 @@ Route::delete('removeFromNode/{content_id}/nodeID/{node_id}','App\Http\Controlle
     ->middleware(['auth'])->name('removeFromNode');
 
 
-
-
-Route::get('forum', function () {
-    return view('pages.forum');
-})->middleware(['auth'])->name('forum');
 
 
 Route::get('/', function () {

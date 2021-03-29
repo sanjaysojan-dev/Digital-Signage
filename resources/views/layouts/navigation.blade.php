@@ -5,7 +5,7 @@
             <div class="flex">
                 <!-- Logo -->
                 <div class="flex-shrink-0 flex items-center">
-                    <a href="{{ route('userDashboard') }}">
+                    <a href="{{ route('allDisplays') }}">
                         <x-application-logo class="block h-10 w-auto fill-current text-gray-600" />
                     </a>
                 </div>
@@ -75,7 +75,7 @@
     <!-- Responsive Navigation Menu -->
     <div :class="{'block': open, 'hidden': ! open}" class="hidden sm:hidden">
         <div class="pt-2 pb-3 space-y-1">
-            <x-responsive-nav-link :href="route('userDashboard')" :active="request()->routeIs('userDashboard')">
+            <x-responsive-nav-link :href="route('allDisplays')" :active="request()->routeIs('allDisplays')">
                 {{ __('Dashboard') }}
             </x-responsive-nav-link>
         </div>

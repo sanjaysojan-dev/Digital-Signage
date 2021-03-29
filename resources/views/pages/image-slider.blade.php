@@ -31,7 +31,7 @@
 </style>
 
 
-<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
+<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.5.1.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bxslider/4.2.15/jquery.bxslider.min.js"></script>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/bxslider/4.2.15/jquery.bxslider.min.css" rel="stylesheet"/>
 
@@ -51,9 +51,15 @@
 </div>
 
 <script>
-    $('.bxslider').bxSlider({
+    setInterval("refresh_page();",10000);
+
+    function refresh_page(){
+        window.location = location.href;
+    }
+     $('.bxslider').bxSlider({
         auto: true,
         autoStart: true,
+         randomStart: true,
         pager: false,
         pause: 2000,
         controls: false,
@@ -62,6 +68,7 @@
         wrapperClass: false
     });
 </script>
+
 
 
 
