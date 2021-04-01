@@ -112,6 +112,8 @@ class NodeDisplayController extends Controller
         $manyToMany = NodeContent::where('display_node_id', $id)->get();
 
         if ($manyToMany->contains('display_content_id', $content['id'])) {
+            $message =  'The selected content has already been uploaded';
+            session()->flash('session_message', $message);
             return redirect()->route('showNode', ['id' => $id]);
         } else {
             $NodeContent = new NodeContent();

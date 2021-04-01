@@ -89,11 +89,18 @@ class NodeContentController extends Controller
     public function showAllNodeContent($id)
     {
 
-        $allNodeContent = DisplayNode::findOrFail($id)->contents;
+        $allNodeContent = DisplayNode::find($id);
 
-        //$allNodeContent = User::findOrfail(Auth::user()->id)->displayContents;
-        return view('pages.image-slider', compact('allNodeContent'));
-
+        if ($allNodeContent != null) {
+            if (count($allNodeContent->contents) > 0) {
+                $allNodeContent = $allNodeContent->contents;
+                return view('pages.image-slider', compact('allNodeContent'));
+            }
+            session()->flash('session_message', 'Content yet to be uploaded - Upload content and try again!');
+            return redirect()->route('showNode', ['id' => $id]);
+        }
+        session()->flash('session_message', 'Node does not exist or node may have been removed!');
+        return redirect()->route('allDisplays');
     }
 
     /**
@@ -181,7 +188,7 @@ class NodeContentController extends Controller
 
         //dd($removeContent);
 
-        foreach ($removeContent as $content){
+        foreach ($removeContent as $content) {
             $content->delete();
         }
 
