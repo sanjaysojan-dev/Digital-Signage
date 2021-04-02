@@ -2,15 +2,21 @@
 
 namespace App\Http\Controllers;
 
+use App\Enums\EmailMessages;
+use App\Enums\EmailSubjectTypes;
 use App\Models\DisplayContent;
 use App\Models\DisplayNode;
 use App\Models\NodeContent;
 use App\Models\User;
+use App\Notifications\EmailNotification;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
+
+
 class NodeDisplayController extends Controller
 {
+
     /**
      * Display a listing of the resource.
      *
@@ -120,6 +126,9 @@ class NodeDisplayController extends Controller
             $NodeContent->display_node_id = $node->id;
             $NodeContent->display_content_id = $content->id;
             $NodeContent->save();
+
+            User::find($node['user_id'])->notify(new EmailNotification(EmailSubjectTypes::UploadOfContent,
+                $content['content_title'].EmailMessages::UploadOfContentMessage, $id,Auth::user()));
         }
 
         return redirect()->route('showNode', ['id' => $id]);
