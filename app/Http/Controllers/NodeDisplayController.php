@@ -184,6 +184,12 @@ class NodeDisplayController extends Controller
     public function destroy($id)
     {
         $display = DisplayNode::findOrFail($id);
+
+        foreach ( $display->contents as $content) {
+            User::find($content->user_id)->notify(new EmailNotification(EmailSubjectTypes::DeletionOfNode,
+                EmailMessages::DeletionOfNodeMessage, $id,Auth::user()));
+        }
+
         $display->delete();
         return redirect()->route('userDisplays');
     }

@@ -2,11 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Enums\EmailMessages;
+use App\Enums\EmailSubjectTypes;
 use App\Models\DisplayContent;
 use App\Models\DisplayNode;
 use App\Models\Image;
 use App\Models\NodeContent;
 use App\Models\User;
+use App\Notifications\EmailNotification;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -186,9 +189,9 @@ class NodeContentController extends Controller
         $removeContent = NodeContent::where('display_node_id', $node_id)->
         where('display_content_id', $content_id)->get();
 
-        //dd($removeContent);
-
         foreach ($removeContent as $content) {
+            DisplayNode::find($node_id)->user->notify(new EmailNotification(EmailSubjectTypes::RemovalOfContent,
+                DisplayContent::find($content_id)->content_title.EmailMessages::RemovalOfContentMessage, $node_id, Auth::user()));
             $content->delete();
         }
 
