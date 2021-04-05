@@ -44,19 +44,19 @@
                             @csrf
                             @component('components.content-edit-form')
                                 @slot('link')
-                                    {{route('updateNodeContent', ['id' => $content->id])}}
+                                    {{route('updateNodeContent', ['id' => $selectedContent->id])}}
                                 @endslot
                                 @slot('title')
-                                    {{$content->content_title}}
+                                    {{$selectedContent->content_title}}
                                 @endslot
                                 @slot('description')
-                                    {{$content->content_description}}
+                                    {{$selectedContent->content_description}}
                                 @endslot
                             @endcomponent
                         </div>
                         <div>
                             <img class="h-full w-full m-4  object-cover shadow rounded "
-                                 src="{{"/storage/images/".$content->image->filename}}" alt="content_image">
+                                 src="{{"/storage/images/".$selectedContent->image->filename}}" alt="content_image">
                         </div>
 
                     </div>

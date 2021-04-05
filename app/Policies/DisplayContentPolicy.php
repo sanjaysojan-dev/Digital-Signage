@@ -2,11 +2,11 @@
 
 namespace App\Policies;
 
-use App\Models\DisplayNode;
+use App\Models\DisplayContent;
 use App\Models\User;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
-class DisplayNodePolicy
+class DisplayContentPolicy
 {
     use HandlesAuthorization;
 
@@ -25,12 +25,12 @@ class DisplayNodePolicy
      * Determine whether the user can view the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\DisplayNode  $displayNode
+     * @param  \App\Models\DisplayContent  $displayContent
      * @return mixed
      */
-    public function view(User $user, DisplayNode $displayNode)
+    public function view(User $user, DisplayContent $displayContent)
     {
-        if ($user->id === $displayNode->user_id){
+        if ($user->id === $displayContent->user_id){
             return true;
         }
     }
@@ -50,12 +50,12 @@ class DisplayNodePolicy
      * Determine whether the user can update the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\DisplayNode  $displayNode
+     * @param  \App\Models\DisplayContent  $displayContent
      * @return mixed
      */
-    public function update(User $user, DisplayNode $displayNode)
+    public function update(User $user, DisplayContent $displayContent)
     {
-        if ($user->id === $displayNode->user_id){
+        if ($user->id === $displayContent->user_id){
             return true;
         }
     }
@@ -64,12 +64,12 @@ class DisplayNodePolicy
      * Determine whether the user can delete the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\DisplayNode  $displayNode
+     * @param  \App\Models\DisplayContent  $displayContent
      * @return mixed
      */
-    public function delete(User $user, DisplayNode $displayNode)
+    public function delete(User $user, DisplayContent $displayContent)
     {
-        if ($user->id === $displayNode->user_id){
+        if ($user->id === $displayContent->user_id){
             return true;
         }
     }

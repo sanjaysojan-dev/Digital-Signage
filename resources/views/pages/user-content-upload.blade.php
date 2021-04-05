@@ -18,32 +18,33 @@
                                     uploaded yet!</h1>
                             @else
                                 @foreach($userContent as $content)
+                                    @can('viewAny', $content)
+                                        @component('components.node-content-card')
+                                            @slot('image')
+                                                {{"/storage/images/".$content->image->filename}}
+                                            @endslot
+                                            @slot('title')
+                                                {{$content->content_title}}
+                                            @endslot
+                                            @slot('description')
+                                                {{$content->content_description}}
+                                            @endslot
+                                        @endcomponent
 
-                                    @component('components.node-content-card')
-                                        @slot('image')
-                                            {{"/storage/images/".$content->image->filename}}
-                                        @endslot
-                                        @slot('title')
-                                            {{$content->content_title}}
-                                        @endslot
-                                        @slot('description')
-                                            {{$content->content_description}}
-                                        @endslot
-                                    @endcomponent
+                                        <div class="flex items-center space-x-4 justify-center mt-4">
+                                            <a class="btn bg-blue-600 text-gray-200 px-2 py-2 rounded-md"
+                                               href="{{route('editNodeContent', ['id'=> $content->id])}}">Edit</a>
 
-                                    <div class="flex items-center space-x-4 justify-center mt-4">
-                                        <a class="btn bg-blue-600 text-gray-200 px-2 py-2 rounded-md"
-                                           href="{{route('editNodeContent', ['id'=> $content->id])}}">Edit</a>
-
-                                        <form action="{{route('deleteNodeContent', ['id' => $content->id])}}"
-                                              method="post">
-                                            @csrf
-                                            @method('DELETE')
-                                            <button class=" bg-red-500 text-gray-900 px-2 py-2 rounded-md mr-2"
-                                                    type="submit">Delete
-                                            </button>
-                                        </form>
-                                    </div>
+                                            <form action="{{route('deleteNodeContent', ['id' => $content->id])}}"
+                                                  method="post">
+                                                @csrf
+                                                @method('DELETE')
+                                                <button class=" bg-red-500 text-gray-900 px-2 py-2 rounded-md mr-2"
+                                                        type="submit">Delete
+                                                </button>
+                                            </form>
+                                        </div>
+                                    @endcan
                                 @endforeach
                             @endif
                         </div>

@@ -37,6 +37,27 @@ class DisplayNodeController extends Controller
         return view('pages.user-display-nodes', compact('nodes'));
     }
 
+    /**
+     * @param $id
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\RedirectResponse
+     */
+    public function showAllNodeContent($id)
+    {
+
+        $allNodeContent = DisplayNode::find($id);
+
+        if ($allNodeContent != null) {
+            if (count($allNodeContent->contents) > 0) {
+                $allNodeContent = $allNodeContent->contents;
+                return view('pages.image-slider', compact('allNodeContent'));
+            }
+            session()->flash('session_message', 'Content yet to be uploaded - Upload content and try again!');
+            return redirect()->route('showNode', ['id' => $id]);
+        }
+        session()->flash('session_message', 'Node does not exist or node may have been removed!');
+        return redirect()->route('allDisplays');
+    }
+
 
     /**
      * Store a newly created resource in storage.

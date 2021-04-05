@@ -26,29 +26,6 @@ class DisplayContentController extends Controller
 
 
     /**
-     * @param $id
-     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\RedirectResponse
-     */
-    public function showAllNodeContent($id)
-    {
-
-        $allNodeContent = DisplayNode::find($id);
-
-        if ($allNodeContent != null) {
-            if (count($allNodeContent->contents) > 0) {
-                $allNodeContent = $allNodeContent->contents;
-                return view('pages.image-slider', compact('allNodeContent'));
-            }
-            session()->flash('session_message', 'Content yet to be uploaded - Upload content and try again!');
-            return redirect()->route('showNode', ['id' => $id]);
-        }
-        session()->flash('session_message', 'Node does not exist or node may have been removed!');
-        return redirect()->route('allDisplays');
-    }
-
-
-
-    /**
      * Store a newly created resource in storage.
      *
      * @param \Illuminate\Http\Request $request
@@ -62,7 +39,7 @@ class DisplayContentController extends Controller
             'image_upload' => 'image|nullable| max:1999'
         ]);
 
-        if ($request->hasFile('image_upload')) {
+        if (Auth::user()->can('create', DisplayContent::class)) {
 
             $fullFileName = $request->file('image_upload')->getClientOriginalName();
             $filename = pathinfo($fullFileName, PATHINFO_FILENAME);
@@ -80,18 +57,14 @@ class DisplayContentController extends Controller
             $displayContent->save();
             $displayContent->image()->save($image);
 
-        } else {
-            //Session header saying that no image was selected
+            session()->flash('session_message', "Content uploaded");
             return redirect()->route('userContent');
 
+        } else {
+            session()->flash('session_message', "You don't have to upload a content");
+            return redirect()->route('userContent');
         }
-
-        return redirect()->route('userContent');
     }
-
-    /**
-     *
-     */
 
 
     /**
@@ -102,9 +75,14 @@ class DisplayContentController extends Controller
      */
     public function edit($id)
     {
-        $content = DisplayContent::findOrFail($id);
-        return view('pages.edit-content', compact('content'));
-    }
+        $selectedContent = DisplayContent::findOrFail($id);
+        if (Auth::user()->can('update', $selectedContent)) {
+            return view('pages.edit-content', compact('selectedContent'));
+        } else {
+            session()->flash('session_message', "You don't have authentication to edit content");
+            return redirect()->route('userContent');
+        }
+   }
 
     /**
      * Update the specified resource in storage.
@@ -121,27 +99,34 @@ class DisplayContentController extends Controller
             'image_upload' => 'image|nullable| max:1999'
         ]);
 
-        $updatedContent = DisplayContent::findOrFail($id);
-        $updatedContent->content_title = $validatedData['contentTitle'];
-        $updatedContent->content_description = $validatedData['contentDescription'];
+        $selectedContent = DisplayContent::findOrFail($id);
 
-        if ($request->hasFile('image_upload')) {
-            $fullFileName = $request->file('image_upload')->getClientOriginalName();
-            $filename = pathinfo($fullFileName, PATHINFO_FILENAME);
-            $fileExtension = $request->file('image_upload')->getClientOriginalExtension();
-            $fileNameToStore = $filename . '_' . time() . '.' . $fileExtension;
+        if (Auth::user()->can('update', $selectedContent)) {
+            $selectedContent->content_title = $validatedData['contentTitle'];
+            $selectedContent->content_description = $validatedData['contentDescription'];
 
-            unlink('storage/images/' . $updatedContent->image->filename);
-            Image::where('imageable_type', 'App\Models\DisplayContent')->where('imageable_id', $updatedContent->id)->delete();
+            if ($request->hasFile('image_upload')) {
+                $fullFileName = $request->file('image_upload')->getClientOriginalName();
+                $filename = pathinfo($fullFileName, PATHINFO_FILENAME);
+                $fileExtension = $request->file('image_upload')->getClientOriginalExtension();
+                $fileNameToStore = $filename . '_' . time() . '.' . $fileExtension;
+
+                unlink('storage/images/' . $selectedContent->image->filename);
+                Image::where('imageable_type', 'App\Models\DisplayContent')->where('imageable_id', $selectedContent->id)->delete();
 
 
-            $image = new Image(['filename' => $fileNameToStore]);
-            $updatedContent->image()->save($image);
-            $request->file('image_upload')->storeAs('public/images', $fileNameToStore);
+                $image = new Image(['filename' => $fileNameToStore]);
+                $selectedContent->image()->save($image);
+                $request->file('image_upload')->storeAs('public/images', $fileNameToStore);
+            }
+
+            $selectedContent->save();
+            session()->flash('session_message', "You are don't have authentication to update selected content");
+            return redirect()->route('userContent');
+        } else {
+            session()->flash('session_message', "Content Updated");
+            return redirect()->route('userContent');
         }
-
-        $updatedContent->save();
-        return redirect()->route('userContent');
 
     }
 
@@ -153,17 +138,22 @@ class DisplayContentController extends Controller
      */
     public function destroy($id)
     {
-        $selectedNode = DisplayContent::findOrFail($id);
-        unlink('storage/images/' . $selectedNode->image->filename);
+        $selectedContent = DisplayContent::findOrFail($id);
 
-        foreach ($selectedNode->nodes as $node){
-            $node->user->notify(new EmailNotification(EmailSubjectTypes::RemovalOfContent,
-                $selectedNode->content_title.EmailMessages::RemovalOfContentMessage, $node->id, Auth::user()));
+        if (Auth::user()->can('delete', $selectedContent)) {
+            unlink('storage/images/' . $selectedContent->image->filename);
+            foreach ($selectedContent->nodes as $node) {
+                $node->user->notify(new EmailNotification(EmailSubjectTypes::RemovalOfContent,
+                    $selectedContent->content_title . EmailMessages::RemovalOfContentMessage, $node->id, Auth::user()));
+            }
+
+            $selectedContent->delete();
+            session()->flash('session_message', "Content Deleted");
+            return redirect()->route('userContent');
+        } else {
+            session()->flash('session_message', "You don't have authentication to delete this content");
+            return redirect()->route('userContent');
         }
-
-        $selectedNode->delete();
-
-        return redirect()->route('userContent');
     }
 
 
