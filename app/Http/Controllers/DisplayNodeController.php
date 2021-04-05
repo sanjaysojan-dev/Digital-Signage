@@ -125,15 +125,21 @@ class DisplayNodeController extends Controller
             'node_description' => 'required'
         ]);
 
-        $nodeDisplay = DisplayNode::find($id);
-        $nodeDisplay->node_title = $validatedData['node_title'];
-        $nodeDisplay->node_location = $validatedData['node_location'];
-        $nodeDisplay->node_description = $validatedData['node_description'];
-        $nodeDisplay->node_mode = $request['node_mode'];
-        $nodeDisplay->user_id = Auth::user()->id;
-        $nodeDisplay->save();
+        $displayNode = DisplayNode::find($id);
 
-        return redirect()->route('userDisplays');
+        if (Auth::user()->can('update', $displayNode)) {
+            $displayNode->node_title = $validatedData['node_title'];
+            $displayNode->node_location = $validatedData['node_location'];
+            $displayNode->node_description = $validatedData['node_description'];
+            $displayNode->node_mode = $request['node_mode'];
+            $displayNode->user_id = Auth::user()->id;
+            $displayNode->save();
+            session()->flash('session_message', "Node updated");
+            return redirect()->route('userDisplays');
+        } else {
+            session()->flash('session_message', "You don't have authentication to update this node");
+            return redirect()->route('userDisplays');
+        }
     }
 
     /**
@@ -147,7 +153,8 @@ class DisplayNodeController extends Controller
         $display = DisplayNode::findOrFail($id);
 
 
-        if ( Auth::user()->can('delete', $display)) {
+        if (Auth::user()->can('delete', $display)) {
+
             foreach ($display->contents as $content) {
                 User::find($content->user_id)->notify(new EmailNotification(EmailSubjectTypes::DeletionOfNode,
                     EmailMessages::DeletionOfNodeMessage, $id, Auth::user()));

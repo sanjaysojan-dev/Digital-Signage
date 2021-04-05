@@ -53,7 +53,9 @@ class DisplayNodePolicy
      */
     public function update(User $user, DisplayNode $displayNode)
     {
-        //
+        if ($user->id === $displayNode->user_id){
+            return true;
+        }
     }
 
     /**
