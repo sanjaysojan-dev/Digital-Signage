@@ -146,12 +146,19 @@ class DisplayNodeController extends Controller
     {
         $display = DisplayNode::findOrFail($id);
 
-        foreach ( $display->contents as $content) {
-            User::find($content->user_id)->notify(new EmailNotification(EmailSubjectTypes::DeletionOfNode,
-                EmailMessages::DeletionOfNodeMessage, $id,Auth::user()));
-        }
 
-        $display->delete();
-        return redirect()->route('userDisplays');
+        if ( Auth::user()->can('delete', $display)) {
+            foreach ($display->contents as $content) {
+                User::find($content->user_id)->notify(new EmailNotification(EmailSubjectTypes::DeletionOfNode,
+                    EmailMessages::DeletionOfNodeMessage, $id, Auth::user()));
+            }
+
+            $display->delete();
+            session()->flash('session_message', "Node Deleted");
+            return redirect()->route('userDisplays');
+        } else {
+            session()->flash('session_message', "You don't have authentication to delete this node");
+            return redirect()->route('userDisplays');
+        }
     }
 }

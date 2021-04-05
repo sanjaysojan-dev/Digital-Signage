@@ -7,7 +7,6 @@ use App\Enums\EmailSubjectTypes;
 use App\Models\DisplayContent;
 use App\Models\DisplayNode;
 use App\Models\Image;
-use App\Models\NodeContent;
 use App\Models\User;
 use App\Notifications\EmailNotification;
 use Illuminate\Http\Request;
