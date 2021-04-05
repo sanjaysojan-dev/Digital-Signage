@@ -21,6 +21,10 @@ Route::get('/Documentation', function () {
     return view('pages.documentation-page-1');
 })->name('documentation');
 
+Route::get('/tcs', function () {
+    return view('pages.terms-and-conditions');
+})->name('tcs');
+
 
 
 Route::get('allDisplays', 'App\Http\Controllers\NodeDisplayController@index')
