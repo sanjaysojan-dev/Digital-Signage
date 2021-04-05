@@ -72,21 +72,17 @@ class DisplayNodeController extends Controller
     public function show($id)
     {
         $node = DisplayNode::findOrFail($id);
-        //dd($node);
 
-        if (Auth::user()->id == $node->user_id) {
+        if (Auth::user()->can('view',$node)) {
             $contentToDisplay = $node->contents;
         } else {
             $nodeContents = $node->contents;
-            //$contentToDisplay = $nodeContents->where('user_id', Auth::user()->id)->get();
             $contentToDisplay = $nodeContents->filter(function ($value) {
                 if ($value['user_id'] == Auth::user()->id) {
                     return true;
                 }
             });
-
             $contentToDisplay->all();
-            //dd($contentToDisplay);
         }
 
         $userContents = DisplayContent::where('user_id', Auth::user()->id)->get();//All user Contents
@@ -104,7 +100,6 @@ class DisplayNodeController extends Controller
      */
     public function edit($id)
     {
-
         $selectedNode = DisplayNode::findOrFail($id);
         if (Auth::user()->can('update', $selectedNode)) {
             return view('pages.edit-node', compact('selectedNode'));
@@ -112,8 +107,6 @@ class DisplayNodeController extends Controller
             session()->flash('session_message', "You don't have authentication to edit this node");
             return redirect()->route('userDisplays');
         }
-
-
     }
 
     /**
@@ -131,15 +124,15 @@ class DisplayNodeController extends Controller
             'node_description' => 'required'
         ]);
 
-        $displayNode = DisplayNode::find($id);
+        $selectedNode = DisplayNode::find($id);
 
-        if (Auth::user()->can('update', $displayNode)) {
-            $displayNode->node_title = $validatedData['node_title'];
-            $displayNode->node_location = $validatedData['node_location'];
-            $displayNode->node_description = $validatedData['node_description'];
-            $displayNode->node_mode = $request['node_mode'];
-            $displayNode->user_id = Auth::user()->id;
-            $displayNode->save();
+        if (Auth::user()->can('update', $selectedNode)) {
+            $selectedNode->node_title = $validatedData['node_title'];
+            $selectedNode->node_location = $validatedData['node_location'];
+            $selectedNode->node_description = $validatedData['node_description'];
+            $selectedNode->node_mode = $request['node_mode'];
+            $selectedNode->user_id = Auth::user()->id;
+            $selectedNode->save();
             session()->flash('session_message', "Node updated");
             return redirect()->route('userDisplays');
         } else {
@@ -156,17 +149,16 @@ class DisplayNodeController extends Controller
      */
     public function destroy($id)
     {
-        $display = DisplayNode::findOrFail($id);
+        $selectedNode = DisplayNode::findOrFail($id);
 
+        if (Auth::user()->can('delete', $selectedNode)) {
 
-        if (Auth::user()->can('delete', $display)) {
-
-            foreach ($display->contents as $content) {
+            foreach ($selectedNode->contents as $content) {
                 User::find($content->user_id)->notify(new EmailNotification(EmailSubjectTypes::DeletionOfNode,
                     EmailMessages::DeletionOfNodeMessage, $id, Auth::user()));
             }
 
-            $display->delete();
+            $selectedNode->delete();
             session()->flash('session_message', "Node Deleted");
             return redirect()->route('userDisplays');
         } else {
