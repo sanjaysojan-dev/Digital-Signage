@@ -104,10 +104,16 @@ class DisplayNodeController extends Controller
      */
     public function edit($id)
     {
-        $user = Auth::user();
-        $selectedNode = DisplayNode::findOrFail($id);
 
-        return view('pages.edit-node', compact('selectedNode'));
+        $selectedNode = DisplayNode::findOrFail($id);
+        if (Auth::user()->can('update', $selectedNode)) {
+            return view('pages.edit-node', compact('selectedNode'));
+        } else {
+            session()->flash('session_message', "You don't have authentication to edit this node");
+            return redirect()->route('userDisplays');
+        }
+
+
     }
 
     /**
