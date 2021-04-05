@@ -26,7 +26,6 @@
             {{ $header }}
         </div>
     </header>
-
         @if(session('session_message'))
             <div class="flex justify-center bg-gray-100 border-4 border-red-600 ">
                 <div class="flex text-center  px-10 py-3">
