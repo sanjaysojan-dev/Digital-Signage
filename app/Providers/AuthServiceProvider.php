@@ -18,6 +18,8 @@ class AuthServiceProvider extends ServiceProvider
         // 'App\Models\Model' => 'App\Policies\ModelPolicy',
         //DisplayNode::class => DisplayNodePolicy::class,
         'App\Models\DisplayNode' => 'App\Policies\DisplayNodePolicy',
+        'App\Models\DisplayContent' => 'App\Policies\DisplayContentPolicy',
+        'App\Policies\NodeContent' => 'App\Policies\NodeContentPolicy',
     ];
 
     /**

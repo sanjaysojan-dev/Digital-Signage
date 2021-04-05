@@ -26,24 +26,30 @@ class NodeContentController extends Controller
 
         $node = DisplayNode::findOrFail($id);
         $content = DisplayContent::findOrFail($request['node_content']);
-
         $manyToMany = NodeContent::where('display_node_id', $id)->get();
 
-        if ($manyToMany->contains('display_content_id', $content['id'])) {
-            $message =  'The selected content has already been uploaded';
-            session()->flash('session_message', $message);
+        if (Auth::user()->can('create', NodeContent::class)){
+            if ($manyToMany->contains('display_content_id', $content['id'])) {
+                session()->flash('session_message', 'The selected content has already been uploaded');
+                return redirect()->route('showNode', ['id' => $id]);
+            } else {
+                $NodeContent = new NodeContent();
+                $NodeContent->display_node_id = $node->id;
+                $NodeContent->display_content_id = $content->id;
+                $NodeContent->save();
+
+                User::find($node['user_id'])->notify(new EmailNotification(EmailSubjectTypes::UploadOfContent,
+                    $content['content_title'].EmailMessages::UploadOfContentMessage, $id,Auth::user()));
+            }
+
+            session()->flash('session_message', 'The selected content has been uploaded');
             return redirect()->route('showNode', ['id' => $id]);
         } else {
-            $NodeContent = new NodeContent();
-            $NodeContent->display_node_id = $node->id;
-            $NodeContent->display_content_id = $content->id;
-            $NodeContent->save();
-
-            User::find($node['user_id'])->notify(new EmailNotification(EmailSubjectTypes::UploadOfContent,
-                $content['content_title'].EmailMessages::UploadOfContentMessage, $id,Auth::user()));
+            session()->flash('session_message', "You don't have authentication to upload to Node");
+            return redirect()->route('showNode', ['id' => $id]);
         }
 
-        return redirect()->route('showNode', ['id' => $id]);
+
     }
 
 
@@ -54,20 +60,23 @@ class NodeContentController extends Controller
      */
     public function removeContentFromNode($content_id, $node_id)
     {
+        $displayContent = DisplayContent::findOrFail($content_id);
+        $displayNode = DisplayNode::findOrFail($node_id);
 
-        $removeContent = NodeContent::where('display_node_id', $node_id)->
-        where('display_content_id', $content_id)->get();
+        if (Auth::user()->can('delete', $displayContent, $displayNode)) {
+            $removeContent = NodeContent::where('display_node_id', $node_id)->
+            where('display_content_id', $content_id)->get();
 
-        foreach ($removeContent as $content) {
-            DisplayNode::find($node_id)->user->notify(new EmailNotification(EmailSubjectTypes::RemovalOfContent,
-                DisplayContent::find($content_id)->content_title.EmailMessages::RemovalOfContentMessage, $node_id, Auth::user()));
-            $content->delete();
+            foreach ($removeContent as $content) {
+                $displayNode->user->notify(new EmailNotification(EmailSubjectTypes::RemovalOfContent,
+                    $displayContent->content_title.EmailMessages::RemovalOfContentMessage, $node_id, Auth::user()));
+                $content->delete();
+            }
+            session()->flash('session_message', "Content removed from Node");
+            return redirect()->route('showNode', ['id' => $node_id]);
+        } else {
+            session()->flash('session_message', "You don't have authentication to delete content from this node");
+            return redirect()->route('showNode', ['id' => $node_id]);
         }
-
-        return redirect()->route('showNode', ['id' => $node_id]);
-
     }
-
-
-
 }
