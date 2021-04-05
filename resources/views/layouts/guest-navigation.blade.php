@@ -20,6 +20,10 @@
                         {{ __('Github') }}
                     </x-nav-link>
 
+                    <x-nav-link :href="route('documentation')" :active="request()->routeIs('documentation')">
+                        {{ __('Documnetation') }}
+                    </x-nav-link>
+
                     <x-nav-link :href="route('tcs')" :active="request()->routeIs('tcs')">
                         {{ __('Terms and Conditions') }}
                     </x-nav-link>
