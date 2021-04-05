@@ -178,6 +178,12 @@ class NodeContentController extends Controller
     {
         $selectedNode = DisplayContent::findOrFail($id);
         unlink('storage/images/' . $selectedNode->image->filename);
+
+        foreach ($selectedNode->nodes as $node){
+            $node->user->notify(new EmailNotification(EmailSubjectTypes::RemovalOfContent,
+                $selectedNode->content_title.EmailMessages::RemovalOfContentMessage, $node->id, Auth::user()));
+        }
+
         $selectedNode->delete();
 
         return redirect()->route('userContent');
