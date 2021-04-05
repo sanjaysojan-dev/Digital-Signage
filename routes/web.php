@@ -27,21 +27,21 @@ Route::get('/tcs', function () {
 
 
 
-Route::get('allDisplays', 'App\Http\Controllers\NodeDisplayController@index')
+Route::get('allDisplays', 'App\Http\Controllers\DisplayNodeController@index')
     ->middleware(['auth'])->name('allDisplays');
 
 
-Route::get('userDisplays', 'App\Http\Controllers\NodeDisplayController@showUserNodes')
+Route::get('userDisplays', 'App\Http\Controllers\DisplayNodeController@showUserNodes')
     ->middleware(['auth'])->name('userDisplays');
 
 
-Route::get('editNodeDisplay/{id}', 'App\Http\Controllers\NodeDisplayController@edit')
+Route::get('editNodeDisplay/{id}', 'App\Http\Controllers\DisplayNodeController@edit')
     ->middleware(['auth'])->name('editNodeDisplay');
 
-Route::put('updateNodeDisplay/{id}', 'App\Http\Controllers\NodeDisplayController@update')
+Route::put('updateNodeDisplay/{id}', 'App\Http\Controllers\DisplayNodeController@update')
     ->middleware(['auth'])->name('updateNodeDisplay');
 
-Route::delete('deleteNodeDisplay/{id}', 'App\Http\Controllers\NodeDisplayController@destroy')
+Route::delete('deleteNodeDisplay/{id}', 'App\Http\Controllers\DisplayNodeController@destroy')
     ->middleware(['auth'])->name('deleteNodeDisplay');
 
 
@@ -50,22 +50,22 @@ Route::delete('deleteNodeDisplay/{id}', 'App\Http\Controllers\NodeDisplayControl
 
 
 
-Route::post('storeDisplay', 'App\Http\Controllers\NodeDisplayController@store')
+Route::post('storeDisplay', 'App\Http\Controllers\DisplayNodeController@store')
     ->middleware(['auth'])->name('storeDisplay');
 
-Route::get('userContent', 'App\Http\Controllers\NodeContentController@showUserContent')
+Route::get('userContent', 'App\Http\Controllers\DisplayContentController@showUserContent')
     ->middleware(['auth'])->name('userContent');
 
-Route::post('storeContent', 'App\Http\Controllers\NodeContentController@store')
+Route::post('storeContent', 'App\Http\Controllers\DisplayContentController@store')
     ->middleware(['auth'])->name('storeContent');
 
-Route::get('editNodeContent/{id}', 'App\Http\Controllers\NodeContentController@edit')
+Route::get('editNodeContent/{id}', 'App\Http\Controllers\DisplayContentController@edit')
     ->middleware(['auth'])->name('editNodeContent');
 
-Route::put('updateNodeContent/{id}', 'App\Http\Controllers\NodeContentController@update')
+Route::put('updateNodeContent/{id}', 'App\Http\Controllers\DisplayContentController@update')
     ->middleware(['auth'])->name('updateNodeContent');
 
-Route::delete('deleteNodeContent/{id}','App\Http\Controllers\NodeContentController@destroy')
+Route::delete('deleteNodeContent/{id}','App\Http\Controllers\DisplayContentController@destroy')
     ->middleware(['auth'])->name('deleteNodeContent');
 
 Route::delete('removeFromNode/{content_id}/nodeID/{node_id}','App\Http\Controllers\NodeContentController@removeContentFromNode')
@@ -81,12 +81,12 @@ Route::get('/', function () {
 
 require __DIR__.'/auth.php';
 
-Route::get('imageSlider/{id}', 'App\Http\Controllers\NodeContentController@showAllNodeContent')->name('imageSlider');
+Route::get('imageSlider/{id}', 'App\Http\Controllers\DisplayContentController@showAllNodeContent')->name('imageSlider');
 
-Route::get('showNode/{id}', 'App\Http\Controllers\NodeDisplayController@show')
+Route::get('showNode/{id}', 'App\Http\Controllers\DisplayNodeController@show')
     ->middleware(['auth'])->name('showNode');
 
-Route::post('uploadContent/{id}', 'App\Http\Controllers\NodeDisplayController@uploadToNode')
+Route::post('uploadContent/{id}', 'App\Http\Controllers\NodeContentController@uploadToNode')
     ->middleware(['auth'])->name('uploadContent');
 
 

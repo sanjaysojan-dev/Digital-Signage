@@ -6,7 +6,6 @@ use App\Enums\EmailMessages;
 use App\Enums\EmailSubjectTypes;
 use App\Models\DisplayContent;
 use App\Models\DisplayNode;
-use App\Models\NodeContent;
 use App\Models\User;
 use App\Notifications\EmailNotification;
 use Illuminate\Http\Request;
@@ -14,7 +13,7 @@ use Illuminate\Support\Facades\Auth;
 
 
 
-class NodeDisplayController extends Controller
+class DisplayNodeController extends Controller
 {
 
     /**
@@ -26,7 +25,6 @@ class NodeDisplayController extends Controller
     {
         $displayNodes = DisplayNode::orderBy('created_at', 'desc')->paginate(6);
         return view('pages.available-displays', compact('displayNodes'));
-
     }
 
     /**
@@ -38,15 +36,6 @@ class NodeDisplayController extends Controller
         return view('pages.user-display-nodes', compact('nodes'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
 
     /**
      * Store a newly created resource in storage.
@@ -104,35 +93,7 @@ class NodeDisplayController extends Controller
         return view('pages.node-content-upload', compact('node', 'userContents', 'contentToDisplay'));
     }
 
-    /**
-     * @param Request $request
-     * @param $id
-     * @return \Illuminate\Http\RedirectResponse
-     */
-    public function uploadToNode(Request $request, $id)
-    {
 
-        $node = DisplayNode::findOrFail($id);
-        $content = DisplayContent::findOrFail($request['node_content']);
-
-        $manyToMany = NodeContent::where('display_node_id', $id)->get();
-
-        if ($manyToMany->contains('display_content_id', $content['id'])) {
-            $message =  'The selected content has already been uploaded';
-            session()->flash('session_message', $message);
-            return redirect()->route('showNode', ['id' => $id]);
-        } else {
-            $NodeContent = new NodeContent();
-            $NodeContent->display_node_id = $node->id;
-            $NodeContent->display_content_id = $content->id;
-            $NodeContent->save();
-
-            User::find($node['user_id'])->notify(new EmailNotification(EmailSubjectTypes::UploadOfContent,
-                $content['content_title'].EmailMessages::UploadOfContentMessage, $id,Auth::user()));
-        }
-
-        return redirect()->route('showNode', ['id' => $id]);
-    }
 
 
     /**
