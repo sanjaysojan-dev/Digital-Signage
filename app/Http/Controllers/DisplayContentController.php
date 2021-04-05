@@ -20,7 +20,7 @@ class DisplayContentController extends Controller
      */
     public function showUserContent()
     {
-        $userContent = User::find(Auth::user()->id)->content;
+        $userContent = User::find(Auth::user()->id)->contents;
         return view('pages.user-content-upload', compact('userContent'));
     }
 
@@ -121,10 +121,10 @@ class DisplayContentController extends Controller
             }
 
             $selectedContent->save();
-            session()->flash('session_message', "You are don't have authentication to update selected content");
+            session()->flash('session_message', "Content Updated");
             return redirect()->route('userContent');
         } else {
-            session()->flash('session_message', "Content Updated");
+            session()->flash('session_message', "You don't have authentication to update selected content");
             return redirect()->route('userContent');
         }
 

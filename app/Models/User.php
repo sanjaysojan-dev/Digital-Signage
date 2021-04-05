@@ -51,7 +51,7 @@ class User extends Authenticatable implements MustVerifyEmail
     /**
      *
      */
-    public function content () {
+    public function contents () {
        return $this->hasMany('App\Models\DisplayContent');
     }
 }

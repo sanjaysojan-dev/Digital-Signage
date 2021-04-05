@@ -18,7 +18,7 @@
                                     uploaded yet!</h1>
                             @else
                                 @foreach($userContent as $content)
-                                    @can('viewAny', $content)
+                                    @can('view', $content)
                                         @component('components.node-content-card')
                                             @slot('image')
                                                 {{"/storage/images/".$content->image->filename}}

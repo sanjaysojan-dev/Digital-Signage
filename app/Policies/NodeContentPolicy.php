@@ -23,7 +23,7 @@ class NodeContentPolicy
         return $user->id > 0;
     }
 
-    
+
     /**
      * @param User $user
      * @param DisplayNode $displayNode
