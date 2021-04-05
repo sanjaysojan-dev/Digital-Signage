@@ -18,35 +18,37 @@
                                     deployed yet!</h1>
                             @else
                                 @foreach($nodes as $display)
-                                    @component('components.node-display-card')
-                                        @slot('link')
-                                            {{route('showNode',['id' => $display->id])}}}
-                                        @endslot
-                                        @slot('nodeTitle')
-                                            {{$display->node_title}}
-                                        @endslot
-                                        @slot('nodeLocation')
-                                            {{$display->node_location}}
-                                        @endslot
-                                        @slot('nodeDescription')
-                                            {{$display->node_description}}
-                                        @endslot
-                                    @endcomponent
-                                    <div class="flex items-center space-x-4 justify-center mt-4">
-                                        <a class="btn bg-blue-600 text-gray-200 px-2 py-2 rounded-md"
-                                           href="{{route('editNodeDisplay', ['id' => $display->id])}}">Edit</a>
+                                    @can('view', $display)
+                                        @component('components.node-display-card')
+                                            @slot('link')
+                                                {{route('showNode',['id' => $display->id])}}}
+                                            @endslot
+                                            @slot('nodeTitle')
+                                                {{$display->node_title}}
+                                            @endslot
+                                            @slot('nodeLocation')
+                                                {{$display->node_location}}
+                                            @endslot
+                                            @slot('nodeDescription')
+                                                {{$display->node_description}}
+                                            @endslot
+                                            @endcan
+                                        @endcomponent
+                                        <div class="flex items-center space-x-4 justify-center mt-4">
+                                            <a class="btn bg-blue-600 text-gray-200 px-2 py-2 rounded-md"
+                                               href="{{route('editNodeDisplay', ['id' => $display->id])}}">Edit</a>
 
-                                        <form action="{{route('deleteNodeDisplay', ['id'=>$display->id])}}"
-                                              method="post">
-                                            @csrf
-                                            @method('DELETE')
-                                            <button class=" bg-red-500 text-gray-900 px-2 py-2 rounded-md mr-2"
-                                                    type="submit">Delete
-                                            </button>
-                                        </form>
-                                    </div>
-                                @endforeach
-                            @endif
+                                            <form action="{{route('deleteNodeDisplay', ['id'=>$display->id])}}"
+                                                  method="post">
+                                                @csrf
+                                                @method('DELETE')
+                                                <button class=" bg-red-500 text-gray-900 px-2 py-2 rounded-md mr-2"
+                                                        type="submit">Delete
+                                                </button>
+                                            </form>
+                                        </div>
+                                        @endforeach
+                                    @endif
                         </div>
                     </div>
                 </div>

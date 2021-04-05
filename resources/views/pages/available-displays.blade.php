@@ -25,6 +25,7 @@
                                         </div>
                                     @else
                                         @foreach($displayNodes as $display)
+                                            @can('viewAny', $display)
                                             @component('components.node-display-card')
                                                 @slot('link')
                                                     {{route('showNode',['id' => $display->id])}}}
@@ -39,6 +40,7 @@
                                                     {{$display->node_description}}
                                                 @endslot
                                             @endcomponent
+                                            @endcan
                                         @endforeach
                                     @endif
 

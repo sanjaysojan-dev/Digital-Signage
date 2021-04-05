@@ -23,8 +23,9 @@ class DisplayNodeController extends Controller
      */
     public function index()
     {
-        $displayNodes = DisplayNode::orderBy('created_at', 'desc')->paginate(6);
-        return view('pages.available-displays', compact('displayNodes'));
+            $displayNodes = DisplayNode::orderBy('created_at', 'desc')->paginate(6);
+            return view('pages.available-displays', compact('displayNodes'));
+
     }
 
     /**
@@ -51,16 +52,21 @@ class DisplayNodeController extends Controller
             'node_description' => 'required'
         ]);
 
-        $nodeDisplay = new DisplayNode();
-        $nodeDisplay->node_title = $validatedData['node_title'];
-        $nodeDisplay->node_location = $validatedData['node_location'];
-        $nodeDisplay->node_description = $validatedData['node_description'];
-        $nodeDisplay->node_mode = $request['node_mode'];
-        $nodeDisplay->user_id = Auth::user()->id;
-        $nodeDisplay->save();
+        if (Auth::user()->can('create', DisplayNode::class)) {
+            $nodeDisplay = new DisplayNode();
+            $nodeDisplay->node_title = $validatedData['node_title'];
+            $nodeDisplay->node_location = $validatedData['node_location'];
+            $nodeDisplay->node_description = $validatedData['node_description'];
+            $nodeDisplay->node_mode = $request['node_mode'];
+            $nodeDisplay->user_id = Auth::user()->id;
+            $nodeDisplay->save();
 
-        return redirect()->route('userDisplays');
-
+            session()->flash('session_message', "Node created");
+            return redirect()->route('userDisplays');
+        } else {
+            session()->flash('session_message', "You don't have authentication to create a node");
+            return redirect()->route('userDisplays');
+        }
     }
 
     /**

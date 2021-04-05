@@ -18,7 +18,7 @@ class DisplayNodePolicy
      */
     public function viewAny(User $user)
     {
-        //
+        return true;
     }
 
     /**
@@ -43,7 +43,7 @@ class DisplayNodePolicy
      */
     public function create(User $user)
     {
-        //
+        return $user->id > 0;
     }
 
     /**
