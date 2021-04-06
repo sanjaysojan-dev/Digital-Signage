@@ -1,0 +1,53 @@
+<?php
+
+namespace Tests\Browser;
+
+use App\Models\User;
+use Illuminate\Foundation\Testing\DatabaseMigrations;
+use Laravel\Dusk\Browser;
+use Tests\DuskTestCase;
+
+class LoginTest extends DuskTestCase
+{
+    /**@test */
+    public function test_user_login()
+    {
+        $this->browse(function ($browser) {
+            $browser->visit('/login')
+                ->type('email', 'taylor@laravel.com')
+                ->type('password', 'password')
+                ->press('LOG IN')
+                ->assertPathIs('/allDisplays');
+        });
+    }
+
+
+    /**@test */
+    public function test_node_creation()
+    {
+        $this->browse(function ($browser) {
+            $browser->visit('/userDisplays')
+                ->type('node_title', 'Test Node')
+                ->type('node_location', 'location')
+                ->type('node_description', 'description')
+                ->select('node_mode', 'Portrait')
+                ->press('POST')
+                ->assertPathIs('/userDisplays');
+        });
+    }
+
+
+    /**@test */
+    public function test_node_edit()
+    {
+        $this->browse(function ($browser) {
+            $browser->visit('/userDisplays')
+                ->type('node_title', 'Test Node')
+                ->type('node_location', 'location')
+                ->type('node_description', 'description')
+                ->select('node_mode', 'Portrait')
+                ->press('EDIT')
+                ->assertPathIs('/userDisplays');
+        });
+    }
+}
