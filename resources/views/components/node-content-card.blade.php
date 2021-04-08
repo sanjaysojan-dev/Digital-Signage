@@ -4,6 +4,9 @@
     <div class="px-6 py-4">
         <div class="text-gray-200 font-bold text-xl mb-2">{{$title}}</div>
         <p class=" text-gray-200 truncate text-grey-darker text-base">
+            {{$contentOwner}}
+        </p>
+        <p class=" text-gray-200 truncate text-grey-darker text-base">
            {{$description}}
         </p>
     </div>

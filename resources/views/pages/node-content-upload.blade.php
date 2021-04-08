@@ -43,8 +43,11 @@
                                     @slot('title')
                                         {{"ID: ".$uploads->id." - ".$uploads->content_title}}
                                     @endslot
+                                        @slot('contentOwner')
+                                            {{"Creator: ".$uploads->user->email}}
+                                        @endslot
                                     @slot('description')
-                                        {{$uploads->content_description}}
+                                        {{"Decription: ".$uploads->content_description}}
                                     @endslot
                                 @endcomponent
 
