@@ -35,7 +35,7 @@
         </div>
 
         <div class="mt-2">
-            <button class="px-4 py-1 text-white font-light tracking-wider bg-gray-900 rounded" type="submit">POST
+            <button class="px-4 py-1 text-white font-light tracking-wider bg-gray-900 rounded" type="submit">CREATE
             </button>
         </div>
     </form>

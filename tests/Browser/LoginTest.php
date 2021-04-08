@@ -12,6 +12,7 @@ class LoginTest extends DuskTestCase
     /**@test */
     public function test_user_login()
     {
+
         $this->browse(function ($browser) {
             $browser->visit('/login')
                 ->type('email', 'taylor@laravel.com')
@@ -23,6 +24,7 @@ class LoginTest extends DuskTestCase
 
 
     /**@test */
+    /*
     public function test_node_creation()
     {
         $this->browse(function ($browser) {
@@ -31,10 +33,10 @@ class LoginTest extends DuskTestCase
                 ->type('node_location', 'location')
                 ->type('node_description', 'description')
                 ->select('node_mode', 'Portrait')
-                ->press('POST')
+                ->press('CREATE')
                 ->assertPathIs('/userDisplays');
         });
-    }
+    }*/
 
 
     /**@test */
@@ -42,11 +44,7 @@ class LoginTest extends DuskTestCase
     {
         $this->browse(function ($browser) {
             $browser->visit('/userDisplays')
-                ->type('node_title', 'Test Node')
-                ->type('node_location', 'location')
-                ->type('node_description', 'description')
-                ->select('node_mode', 'Portrait')
-                ->press('EDIT')
+                ->press('Delete1')
                 ->assertPathIs('/userDisplays');
         });
     }
