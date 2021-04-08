@@ -16,6 +16,9 @@
                         @slot('nodeMode')
                             {{$node->node_mode}}
                         @endslot
+                        @slot('nodeOwner')
+                            {{$node->user->email}}
+                        @endslot
                         @slot('nodeLocation')
                             {{$node->node_location}}
                         @endslot
@@ -60,27 +63,27 @@
                         </div>
                     </div>
 
-                        @if(count($userContents) == 0)
-                            <h1 class="title-font sm:text-2xl text-2xl mb-4 ml-10 font-medium text-gray-100">No content
-                                uploaded yet! Please upload content to be able target a node</h1>
-                        @else
-                            <form method="POST" action="{{route('uploadContent', ['id' => $node->id])}}"
-                                  enctype="multipart/form-data">
-                                <div class="flex items-center space-x-4 justify-start top-auto">
-                                    <div class="ml-10">
-                                        @csrf
-                                        <select name="node_content" class="w-full">
-                                            @foreach($userContents as $content)
-                                                <option value={{$content->id}}> {{$content->content_title}}</option>
-                                            @endforeach
-                                        </select>
-                                    </div>
-                                    <button class="m-10 bg-yellow-500 text-gray-900 px-2 py-2 rounded-md mr-2"
-                                            type="submit">Post to Node
-                                    </button>
+                    @if(count($userContents) == 0)
+                        <h1 class="title-font sm:text-2xl text-2xl mb-4 ml-10 font-medium text-gray-100">No content
+                            uploaded yet! Please upload content to be able target a node</h1>
+                    @else
+                        <form method="POST" action="{{route('uploadContent', ['id' => $node->id])}}"
+                              enctype="multipart/form-data">
+                            <div class="flex items-center space-x-4 justify-start top-auto">
+                                <div class="ml-10">
+                                    @csrf
+                                    <select name="node_content" class="w-full">
+                                        @foreach($userContents as $content)
+                                            <option value={{$content->id}}> {{$content->content_title}}</option>
+                                        @endforeach
+                                    </select>
                                 </div>
-                            </form>
-                        @endif
+                                <button class="m-10 bg-yellow-500 text-gray-900 px-2 py-2 rounded-md mr-2"
+                                        type="submit">Post to Node
+                                </button>
+                            </div>
+                        </form>
+                    @endif
                 </div>
             </div>
         </div>

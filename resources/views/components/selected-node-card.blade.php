@@ -30,9 +30,18 @@
         <hr class="mb-4 border-gray-700">
 
         <ul class="list-disc ml-4 mt-2">
+            <li> Display Owner: {{$nodeOwner}} </li>
             <li>Description: {{$nodeDescription}}</li>
             <li>Location: {{$nodeLocation}}</li>
             <a href="{{$link}}"><li>{{$url}}</li></a>
         </ul>
+    </div>
+
+
+    <div class="flex justify-end">
+        <button id="Report"
+                class="btn bg-red-600 text-gray-200 px-2 py-2 rounded-md"
+                onclick=""> Flag Display
+        </button>
     </div>
 </div>
