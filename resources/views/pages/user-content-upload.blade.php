@@ -20,11 +20,16 @@
                                 @foreach($userContent as $content)
                                     @can('view', $content)
                                         @component('components.node-content-card')
+                                            @slot('link')
+                                            @endslot
                                             @slot('image')
                                                 {{"/storage/images/".$content->image->filename}}
                                             @endslot
                                             @slot('title')
                                                 {{$content->content_title}}
+                                            @endslot
+                                            @slot('contentOwner')
+                                                {{"Creator: ".$content->user->email}}
                                             @endslot
                                             @slot('description')
                                                 {{$content->content_description}}

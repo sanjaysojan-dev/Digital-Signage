@@ -41,7 +41,7 @@
     <div class="flex justify-end">
         <button id="Report"
                 class="btn bg-red-600 text-gray-200 px-2 py-2 rounded-md"
-                onclick=""> Flag Display
+                onclick="window.location.href='{{$flag}}'"> Flag Display
         </button>
     </div>
 </div>

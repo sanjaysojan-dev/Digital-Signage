@@ -25,6 +25,27 @@ class DisplayContentController extends Controller
     }
 
 
+    public function showSelectedContent ($node_id, $content_id){
+
+        $node = DisplayNode::findOrFail($node_id);
+        $content = DisplayContent::findOrFail($content_id);
+
+        if (((User::find(2)->id == $content->user_id) || (User::find(1)->id == $node->user_id))){
+
+            $nodeContents = $node->contents;
+            $allNodeContent = $nodeContents->filter(function ($value) use ($content_id){
+
+                if ($value['id'] == $content_id) {
+                    return true;
+                }
+            });
+            $allNodeContent->all();
+            return view('pages.image-slider', compact('allNodeContent'));
+        } else {
+            return redirect()->route('showNode', ['id' => $node_id]);
+        }
+    }
+
     /**
      * Store a newly created resource in storage.
      *

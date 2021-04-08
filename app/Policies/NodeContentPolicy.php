@@ -23,19 +23,4 @@ class NodeContentPolicy
         return $user->id > 0;
     }
 
-
-    /**
-     * @param User $user
-     * @param DisplayNode $displayNode
-     * @param DisplayContent $displayContent
-     * @return bool
-     */
-    public function delete(User $user, DisplayContent $displayContent, DisplayNode $displayNode)
-    {
-
-        if (($user->id === $displayContent->user_id)||($user->id === $displayNode->user_id)){
-            return true;
-        }
-    }
-
 }

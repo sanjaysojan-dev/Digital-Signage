@@ -49,7 +49,6 @@ class NodeContentController extends Controller
             return redirect()->route('showNode', ['id' => $id]);
         }
 
-
     }
 
 
@@ -63,7 +62,7 @@ class NodeContentController extends Controller
         $displayContent = DisplayContent::findOrFail($content_id);
         $displayNode = DisplayNode::findOrFail($node_id);
 
-        if (Auth::user()->can('delete', $displayContent, $displayNode)) {
+        if (((Auth::user()->id == $displayContent->user_id) || (Auth::user()->id == $displayNode->user_id))) {
             $removeContent = NodeContent::where('display_node_id', $node_id)->
             where('display_content_id', $content_id)->get();
 

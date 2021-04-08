@@ -44,8 +44,8 @@ Route::put('updateNodeDisplay/{id}', 'App\Http\Controllers\DisplayNodeController
 Route::delete('deleteNodeDisplay/{id}', 'App\Http\Controllers\DisplayNodeController@destroy')
     ->middleware(['auth'])->name('deleteNodeDisplay');
 
-
-
+Route::get('FlagDisplayNode/{id}', 'App\Http\Controllers\DisplayNodeController@flagDisplay')
+    ->middleware(['auth'])->name('FlagDisplayNode');
 
 
 
@@ -82,6 +82,10 @@ Route::get('/', function () {
 require __DIR__.'/auth.php';
 
 Route::get('imageSlider/{id}', 'App\Http\Controllers\DisplayNodeController@showAllNodeContent')->name('imageSlider');
+
+Route::get('/showContentImage/{node_id}/{content_id}/', 'App\Http\Controllers\DisplayContentController@showSelectedContent')
+    ->middleware(['auth'])->name('showContentImage');
+
 
 Route::get('showNode/{id}', 'App\Http\Controllers\DisplayNodeController@show')
     ->middleware(['auth'])->name('showNode');

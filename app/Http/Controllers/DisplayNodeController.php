@@ -193,4 +193,18 @@ class DisplayNodeController extends Controller
             return redirect()->route('userDisplays');
         }
     }
+
+    /**
+     *
+     */
+    public function flagDisplay ($id){
+
+        $selectedNode = DisplayNode::findOrFail($id);
+
+        User::find($selectedNode->user_id)->notify(new EmailNotification(EmailSubjectTypes::DisplayFlagged,
+            "Node ".$id.EmailMessages::DisplayFlaggedMessage, $id, Auth::user()));
+
+        session()->flash('session_message', "Node has been flagged.");
+        return redirect()->route('showNode', ['id' => $id]);
+    }
 }

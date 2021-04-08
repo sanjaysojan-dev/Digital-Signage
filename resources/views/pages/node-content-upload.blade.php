@@ -31,26 +31,31 @@
                         @slot('url')
                             display_system.test/imageSlider/{{$node->id}}
                         @endslot
+                        @slot('flag')
+                            {{route('FlagDisplayNode', ['id' => $node->id])}}
+                        @endslot
                     @endcomponent
 
                     <div class="max-w-6xl mx-auto px-20 py-5">
                         <div class="flex flex-wrap sm:-m-4 -mx-4 -mb-5 -mt-4 ">
                             @foreach($contentToDisplay as $uploads)
                                 @component('components.node-content-card')
+                                    @slot('link')
+                                        {{route('showContentImage',['node_id'=>$node->id,'content_id'=>$uploads->id])}}
+                                    @endslot
                                     @slot('image')
                                         {{"/storage/images/".$uploads->image->filename}}
                                     @endslot
                                     @slot('title')
                                         {{"ID: ".$uploads->id." - ".$uploads->content_title}}
                                     @endslot
-                                        @slot('contentOwner')
-                                            {{"Creator: ".$uploads->user->email}}
-                                        @endslot
+                                    @slot('contentOwner')
+                                        {{"Creator: ".$uploads->user->email}}
+                                    @endslot
                                     @slot('description')
                                         {{"Decription: ".$uploads->content_description}}
                                     @endslot
                                 @endcomponent
-
                                 <div class="flex items-center space-x-4 justify-center mt-4">
                                     <form
                                         action="{{route('removeFromNode', ['content_id'=> $uploads->id, 'node_id'=> $node->id])}}"
