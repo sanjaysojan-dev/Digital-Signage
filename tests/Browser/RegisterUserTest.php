@@ -33,6 +33,7 @@ class RegisterUserTest extends DuskTestCase
                 ->type('password_confirmation', 'password')
                 ->press('Register')
                 ->assertPathIs('/allDisplays')
+                ->pause(2000)
                 ->logout();
         });
     }
@@ -47,9 +48,8 @@ class RegisterUserTest extends DuskTestCase
                 ->type('password_confirmation', 'password')
                 ->press('Register')
                 ->assertSee('Whoops! Something went wrong')
-                ->pause(4000)
-                ->assertPathIs('/register')
-                ->logout();
+                ->pause(2000)
+                ->assertPathIs('/register');
         });
     }
 

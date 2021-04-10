@@ -29,6 +29,20 @@ class LoginTest extends DuskTestCase
     }
 
 
+    /**@test */
+    public function test_user_logout()
+    {
+
+        $this->browse(function ($browser) {
+            $browser->visit('/allDisplays')
+                ->logout()
+                ->visit('/')
+                ->assertSee('Login')
+                ->pause(2000);
+        });
+    }
+
+
 //    /**@test */
 //
 //    public function test_node_creation()
