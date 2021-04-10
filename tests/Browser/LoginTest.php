@@ -15,42 +15,37 @@ class LoginTest extends DuskTestCase
     public function test_user_login()
     {
 
-//        $user = User::factory()->create([
-//            'email' => 'taylor@laravel.com',
-//        ]);
-
-//        $this->browse(function ($browser) {
-//            $browser->visit('/login')
-//                ->type('email', 'taylor@laravel.com')
-//                ->type('password', 'password')
-//                ->press('LOG IN')
-//                ->assertPathIs('/allDisplays');
-//        });
+        $user = User::factory()->create([
+            'email' => 'taylor@laravel.com',
+        ]);
 
         $this->browse(function ($browser) {
             $browser->visit('/login')
-                ->assertPathIs('/login');
+                ->type('email', 'taylor@laravel.com')
+                ->type('password', 'password')
+                ->press('LOG IN')
+                ->assertPathIs('/allDisplays');
         });
     }
 
 
-    /**@test */
-    /*
-    public function test_node_creation()
-    {
-        $this->browse(function ($browser) {
-            $browser->visit('/userDisplays')
-                ->type('node_title', 'Test Node')
-                ->type('node_location', 'location')
-                ->type('node_description', 'description')
-                ->select('node_mode', 'Portrait')
-                ->press('CREATE')
-                ->assertPathIs('/userDisplays');
-        });
-    }*/
+//    /**@test */
+//
+//    public function test_node_creation()
+//    {
+//        $this->browse(function ($browser) {
+//            $browser->visit('/userDisplays')
+//                ->type('node_title', 'Test Node')
+//                ->type('node_location', 'location')
+//                ->type('node_description', 'description')
+//                ->select('node_mode', 'Portrait')
+//                ->press('CREATE')
+//                ->assertPathIs('/userDisplays');
+//        });
+//    }
 
-
-    /**@test */
+//
+//    /**@test */
 //    public function test_node_edit()
 //    {
 //        $this->browse(function ($browser) {

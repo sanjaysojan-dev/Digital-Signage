@@ -21,7 +21,7 @@
   <component name="ChangeListManager">
     <list default="true" id="63e3926f-c832-4fed-adf0-ff6e0b611f1d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/auth/register.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/register.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Run_Broswer_Test.bat" beforeDir="false" afterPath="$PROJECT_DIR$/Run_Broswer_Test.bat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tests/Browser/LoginTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Browser/LoginTest.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -230,7 +230,7 @@
       <workItem from="1617316445878" duration="24279000" />
       <workItem from="1617614511290" duration="33151000" />
       <workItem from="1617905935169" duration="13620000" />
-      <workItem from="1618061664626" duration="3512000" />
+      <workItem from="1618061664626" duration="5978000" />
     </task>
     <servers />
   </component>
