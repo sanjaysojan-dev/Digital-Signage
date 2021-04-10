@@ -21,17 +21,8 @@
   <component name="ChangeListManager">
     <list default="true" id="63e3926f-c832-4fed-adf0-ff6e0b611f1d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Enums/EmailMessages.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Enums/EmailMessages.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Enums/EmailSubjectTypes.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Enums/EmailSubjectTypes.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/DisplayContentController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/DisplayContentController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/DisplayNodeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/DisplayNodeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/NodeContentController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/NodeContentController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Policies/NodeContentPolicy.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Policies/NodeContentPolicy.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/components/node-content-card.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/components/node-content-card.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/components/selected-node-card.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/components/selected-node-card.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pages/node-content-upload.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/node-content-upload.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pages/user-content-upload.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/user-content-upload.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/auth/register.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/register.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/Browser/LoginTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Browser/LoginTest.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -173,6 +164,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/layouts" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="web-ide.project.structure" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -180,11 +172,35 @@
       <recent name="C:\xampp\htdocs\Digital-Signage\resources\views\layouts" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="PHPUnit.RegisterUserTest.test_user_already_registered">
+    <configuration name="RegisterUserTest.test_user_already_registered" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <CommandLine>
+        <PhpTestInterpreterSettings>
+          <option name="interpreterName" value="PHP 7.4" />
+        </PhpTestInterpreterSettings>
+      </CommandLine>
+      <TestRunner class="Tests\Browser\RegisterUserTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/tests/Browser/RegisterUserTest.php" method="test_user_already_registered" scope="Method" />
+      <method v="2" />
+    </configuration>
+    <configuration name="RegisterUser.testExample" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <CommandLine>
+        <PhpTestInterpreterSettings>
+          <option name="interpreterName" value="PHP 7.4" />
+        </PhpTestInterpreterSettings>
+      </CommandLine>
+      <TestRunner class="Tests\Browser\RegisterUser" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/tests/Browser/RegisterUser.php" method="testExample" scope="Method" />
+      <method v="2" />
+    </configuration>
     <configuration name="phpunit.xml" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
       <TestRunner scope="XML" />
       <method v="2" />
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="PHPUnit.RegisterUserTest.test_user_already_registered" />
+        <item itemvalue="PHPUnit.RegisterUser.testExample" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -213,7 +229,8 @@
       <workItem from="1617018632669" duration="6944000" />
       <workItem from="1617316445878" duration="24279000" />
       <workItem from="1617614511290" duration="33151000" />
-      <workItem from="1617905935169" duration="13138000" />
+      <workItem from="1617905935169" duration="13620000" />
+      <workItem from="1618061664626" duration="3512000" />
     </task>
     <servers />
   </component>
@@ -237,10 +254,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="274" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1536.824/0.-1080.1536.824@0.0.1536.824" timestamp="1617637329655" />
-    <state x="499" y="-913" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1617662038956">
+    <state x="499" y="-913" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1618062843370">
       <screen x="0" y="-1080" width="1536" height="824" />
     </state>
-    <state x="499" y="-913" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1536.824/0.-1080.1536.824@0.-1080.1536.824" timestamp="1617662038956" />
+    <state x="499" y="-913" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1536.824/0.-1080.1536.824@0.-1080.1536.824" timestamp="1618062843370" />
     <state x="499" y="167" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1536.824/0.-1080.1536.824@0.0.1536.824" timestamp="1617637377229" />
     <state x="2419" y="167" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1536.824/1920.0.1536.824@1920.0.1536.824" timestamp="1613649537332" />
     <state x="2462" y="167" key="FileChooserDialogImpl" timestamp="1616798719408">
@@ -248,25 +265,25 @@
     </state>
     <state x="542" y="167" key="FileChooserDialogImpl/0.0.1536.824/1920.0.1536.824@0.0.1536.824" timestamp="1615291877763" />
     <state x="2462" y="167" key="FileChooserDialogImpl/0.0.1536.824/1920.0.1536.824@1920.0.1536.824" timestamp="1616798719408" />
-    <state width="1495" height="211" key="GridCell.Tab.0.bottom" timestamp="1617727216872">
+    <state width="1495" height="211" key="GridCell.Tab.0.bottom" timestamp="1618063867789">
       <screen x="0" y="-1080" width="1536" height="824" />
     </state>
-    <state width="1495" height="211" key="GridCell.Tab.0.bottom/0.0.1536.824/0.-1080.1536.824@0.-1080.1536.824" timestamp="1617727216872" />
+    <state width="1495" height="211" key="GridCell.Tab.0.bottom/0.0.1536.824/0.-1080.1536.824@0.-1080.1536.824" timestamp="1618063867789" />
     <state width="1495" height="262" key="GridCell.Tab.0.bottom/0.0.1536.824/0.-1080.1536.824@0.0.1536.824" timestamp="1617705032893" />
-    <state width="1495" height="211" key="GridCell.Tab.0.center" timestamp="1617727216871">
+    <state width="1495" height="211" key="GridCell.Tab.0.center" timestamp="1618063867789">
       <screen x="0" y="-1080" width="1536" height="824" />
     </state>
-    <state width="1495" height="211" key="GridCell.Tab.0.center/0.0.1536.824/0.-1080.1536.824@0.-1080.1536.824" timestamp="1617727216871" />
+    <state width="1495" height="211" key="GridCell.Tab.0.center/0.0.1536.824/0.-1080.1536.824@0.-1080.1536.824" timestamp="1618063867789" />
     <state width="1495" height="262" key="GridCell.Tab.0.center/0.0.1536.824/0.-1080.1536.824@0.0.1536.824" timestamp="1617705032893" />
-    <state width="1495" height="211" key="GridCell.Tab.0.left" timestamp="1617727216871">
+    <state width="1495" height="211" key="GridCell.Tab.0.left" timestamp="1618063867789">
       <screen x="0" y="-1080" width="1536" height="824" />
     </state>
-    <state width="1495" height="211" key="GridCell.Tab.0.left/0.0.1536.824/0.-1080.1536.824@0.-1080.1536.824" timestamp="1617727216871" />
+    <state width="1495" height="211" key="GridCell.Tab.0.left/0.0.1536.824/0.-1080.1536.824@0.-1080.1536.824" timestamp="1618063867789" />
     <state width="1495" height="262" key="GridCell.Tab.0.left/0.0.1536.824/0.-1080.1536.824@0.0.1536.824" timestamp="1617705032892" />
-    <state width="1495" height="211" key="GridCell.Tab.0.right" timestamp="1617727216871">
+    <state width="1495" height="211" key="GridCell.Tab.0.right" timestamp="1618063867789">
       <screen x="0" y="-1080" width="1536" height="824" />
     </state>
-    <state width="1495" height="211" key="GridCell.Tab.0.right/0.0.1536.824/0.-1080.1536.824@0.-1080.1536.824" timestamp="1617727216871" />
+    <state width="1495" height="211" key="GridCell.Tab.0.right/0.0.1536.824/0.-1080.1536.824@0.-1080.1536.824" timestamp="1618063867789" />
     <state width="1495" height="262" key="GridCell.Tab.0.right/0.0.1536.824/0.-1080.1536.824@0.0.1536.824" timestamp="1617705032893" />
     <state width="1495" height="262" key="GridCell.Tab.1.bottom" timestamp="1617705032893">
       <screen x="0" y="0" width="1536" height="824" />
@@ -300,6 +317,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1495" height="262" key="GridCell.Tab.2.right/0.0.1536.824/0.-1080.1536.824@0.0.1536.824" timestamp="1617705032893" />
+    <state x="307" y="-1022" key="SettingsEditor" timestamp="1618064225807">
+      <screen x="0" y="-1080" width="1536" height="824" />
+    </state>
+    <state x="307" y="-1022" key="SettingsEditor/0.0.1536.824/0.-1080.1536.824@0.-1080.1536.824" timestamp="1618064225807" />
     <state x="2487" y="327" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1616804318244">
       <screen x="1920" y="0" width="1536" height="824" />
     </state>

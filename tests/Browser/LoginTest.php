@@ -9,16 +9,27 @@ use Tests\DuskTestCase;
 
 class LoginTest extends DuskTestCase
 {
+
+
     /**@test */
     public function test_user_login()
     {
 
+//        $user = User::factory()->create([
+//            'email' => 'taylor@laravel.com',
+//        ]);
+
+//        $this->browse(function ($browser) {
+//            $browser->visit('/login')
+//                ->type('email', 'taylor@laravel.com')
+//                ->type('password', 'password')
+//                ->press('LOG IN')
+//                ->assertPathIs('/allDisplays');
+//        });
+
         $this->browse(function ($browser) {
             $browser->visit('/login')
-                ->type('email', 'taylor@laravel.com')
-                ->type('password', 'password')
-                ->press('LOG IN')
-                ->assertPathIs('/allDisplays');
+                ->assertPathIs('/login');
         });
     }
 
@@ -40,12 +51,13 @@ class LoginTest extends DuskTestCase
 
 
     /**@test */
-    public function test_node_edit()
-    {
-        $this->browse(function ($browser) {
-            $browser->visit('/userDisplays')
-                ->press('Delete1')
-                ->assertPathIs('/userDisplays');
-        });
-    }
+//    public function test_node_edit()
+//    {
+//        $this->browse(function ($browser) {
+//            $browser->visit('/userDisplays')
+//                ->press('Delete1')
+//                ->assertPathIs('/userDisplays');
+//        });
+//    }
+
 }
