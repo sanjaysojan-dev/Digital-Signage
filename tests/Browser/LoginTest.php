@@ -16,6 +16,7 @@ class LoginTest extends DuskTestCase
     {
 
         $user = User::factory()->create([
+            'id' => 1,
             'email' => 'taylor@laravel.com',
         ]);
 

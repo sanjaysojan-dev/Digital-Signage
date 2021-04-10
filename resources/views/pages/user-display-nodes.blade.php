@@ -35,7 +35,7 @@
                                             @endcan
                                         @endcomponent
                                         <div class="flex items-center space-x-4 justify-center mt-4">
-                                            <button id="Edit{{$display->id}}"
+                                            <button name="Edit{{$display->id}}"
                                                     class="btn bg-blue-600 text-gray-200 px-2 py-2 rounded-md"
                                                     onclick="window.location.href='{{route('editNodeDisplay', ['id' => $display->id])}}'">
                                                 Edit
