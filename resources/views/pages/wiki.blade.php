@@ -39,10 +39,7 @@
             border: 0 solid #e2e8f0
         }
 
-        a {
-            color: inherit;
-            text-decoration: inherit
-        }
+
 
         svg, video {
             display: block;
@@ -411,7 +408,6 @@
     @endif
 
 
-
     <div class="max-w-6xl mx-auto sm:px-6 lg:px-8">
 
         <h1 class="title-font sm:text-6xl text-9xl mb-4 font-medium text-gray-500">Rural Pervasive Display System!</h1>
@@ -442,9 +438,9 @@
 
                     <div class="ml-12">
                         <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                            labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                            laboris nisi ut aliquip ex ea commodo consequat.
+                            Documentation on the functionality and use of the display system can be found by clicking
+                            the link. A step-by-step guide accompanied with a YouTube is provided for users to get
+                            comfortable with using the system.
                         </div>
                     </div>
                 </div>
@@ -466,9 +462,8 @@
 
                     <div class="ml-12">
                         <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                            labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                            laboris nisi ut aliquip ex ea commodo consequat.
+                            The link directs you the Content Management System to create Display Nodes and upload
+                            content. Be sure to view the documentation before using the system.
                         </div>
                     </div>
                 </div>
@@ -482,15 +477,14 @@
                         </svg>
                         <div class="ml-4 text-lg leading-7 font-semibold">
                             <a href="https://github.com/sanjaysojan-dev/Digital-Signage-Scripts.git"
-                               class="underline text-gray-900 dark:text-white">Github</a>
+                               class="underline text-gray-900 dark:text-white">GitHub</a>
                         </div>
                     </div>
 
                     <div class="ml-12">
                         <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                            labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                            laboris nisi ut aliquip ex ea commodo consequat.
+                            The link above directs you to the GitHub repository holding the necessary scripts for the
+                            Raspberry Pi. Be sure to view the documentation before setting up the scripts.
                         </div>
                     </div>
                 </div>
@@ -509,16 +503,14 @@
 
                     <div class="ml-12">
                         <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                            labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                            laboris nisi ut aliquip ex ea commodo consequat.
+                            Please read the Terms and Conditions of before registering with the system.
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        </div>
     </div>
+</div>
 </div>
 </body>
 </html>
