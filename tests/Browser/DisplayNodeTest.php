@@ -52,7 +52,6 @@ class DisplayNodeTest extends DuskTestCase
             $browser
                 ->visit('/userDisplays')
                 ->press('Delete2')
-                ->pause(2000)
                 ->assertSee('Node Deleted')
                 ->assertPathIs('/userDisplays')
                 ->pause(2000);
@@ -64,11 +63,10 @@ class DisplayNodeTest extends DuskTestCase
         $this->browse(function (Browser $browser)  {
             $browser
                 ->visit('/userDisplays')
-                ->pause(2000)
                 ->press('Edit1')
                 ->type('node_title', 'Test Node 1')
                 ->type('node_location', 'location')
-                ->type('node_description', 'description')
+                ->type('node_description', 'Modified')
                 ->select('node_mode', 'Portrait')
                 ->press('UPDATE')
                 ->assertSee('Node updated')
@@ -76,5 +74,4 @@ class DisplayNodeTest extends DuskTestCase
                 ->pause(2000);
         });
     }
-
 }

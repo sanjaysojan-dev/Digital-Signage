@@ -55,8 +55,8 @@ class DisplayContentController extends Controller
     public function store(Request $request)
     {
         $validatedData = $request->validate([
-            'contentTitle' => 'required|max:255',
-            'contentDescription' => 'required',
+            'content_title' => 'required|max:255',
+            'content_description' => 'required',
             'image_upload' => 'image|nullable| max:1999'
         ]);
 
@@ -71,8 +71,8 @@ class DisplayContentController extends Controller
             $image = new Image(['filename' => $fileNameToStore]);
 
             $displayContent = new DisplayContent();
-            $displayContent->content_title = $validatedData['contentTitle'];
-            $displayContent->content_description = $validatedData['contentDescription'];
+            $displayContent->content_title = $validatedData['content_title'];
+            $displayContent->content_description = $validatedData['content_description'];
             $displayContent->user_id = Auth::user()->id;
 
             $displayContent->save();
@@ -115,16 +115,16 @@ class DisplayContentController extends Controller
     public function update(Request $request, $id)
     {
         $validatedData = $request->validate([
-            'contentTitle' => 'required|max:255',
-            'contentDescription' => 'required',
+            'content_title' => 'required|max:255',
+            'content_description' => 'required',
             'image_upload' => 'image|nullable| max:1999'
         ]);
 
         $selectedContent = DisplayContent::findOrFail($id);
 
         if (Auth::user()->can('update', $selectedContent)) {
-            $selectedContent->content_title = $validatedData['contentTitle'];
-            $selectedContent->content_description = $validatedData['contentDescription'];
+            $selectedContent->content_title = $validatedData['content_title'];
+            $selectedContent->content_description = $validatedData['content_description'];
 
             if ($request->hasFile('image_upload')) {
                 $fullFileName = $request->file('image_upload')->getClientOriginalName();

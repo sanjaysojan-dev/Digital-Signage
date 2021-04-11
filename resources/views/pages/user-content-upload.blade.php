@@ -37,14 +37,16 @@
                                         @endcomponent
 
                                         <div class="flex items-center space-x-4 justify-center mt-4">
-                                            <a class="btn bg-blue-600 text-gray-200 px-2 py-2 rounded-md"
-                                               href="{{route('editNodeContent', ['id'=> $content->id])}}">Edit</a>
-
+                                            <button name="Edit{{$content->id}}"
+                                                    class="btn bg-blue-600 text-gray-200 px-2 py-2 rounded-md"
+                                                    onclick="window.location.href='{{route('editNodeContent', ['id'=> $content->id])}}'">
+                                                Edit
+                                            </button>
                                             <form action="{{route('deleteNodeContent', ['id' => $content->id])}}"
                                                   method="post">
                                                 @csrf
                                                 @method('DELETE')
-                                                <button class=" bg-red-500 text-gray-900 px-2 py-2 rounded-md mr-2"
+                                                <button name="Delete{{$content->id}}"class=" bg-red-500 text-gray-900 px-2 py-2 rounded-md mr-2"
                                                         type="submit">Delete
                                                 </button>
                                             </form>

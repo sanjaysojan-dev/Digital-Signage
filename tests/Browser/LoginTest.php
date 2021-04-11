@@ -38,36 +38,8 @@ class LoginTest extends DuskTestCase
             $browser->visit('/allDisplays')
                 ->logout()
                 ->visit('/')
-                ->assertSee('Login')
-                ->pause(2000);
+                ->assertSee('Login');
         });
     }
-
-
-//    /**@test */
-//
-//    public function test_node_creation()
-//    {
-//        $this->browse(function ($browser) {
-//            $browser->visit('/userDisplays')
-//                ->type('node_title', 'Test Node')
-//                ->type('node_location', 'location')
-//                ->type('node_description', 'description')
-//                ->select('node_mode', 'Portrait')
-//                ->press('CREATE')
-//                ->assertPathIs('/userDisplays');
-//        });
-//    }
-
-//
-//    /**@test */
-//    public function test_node_edit()
-//    {
-//        $this->browse(function ($browser) {
-//            $browser->visit('/userDisplays')
-//                ->press('Delete1')
-//                ->assertPathIs('/userDisplays');
-//        });
-//    }
 
 }
