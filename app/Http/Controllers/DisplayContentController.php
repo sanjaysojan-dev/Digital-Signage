@@ -30,7 +30,7 @@ class DisplayContentController extends Controller
         $node = DisplayNode::findOrFail($node_id);
         $content = DisplayContent::findOrFail($content_id);
 
-        if (((User::find(2)->id == $content->user_id) || (User::find(1)->id == $node->user_id))){
+        if (((Auth::user()->id == $content->user_id) || (Auth::user()->id == $node->user_id))){
 
             $nodeContents = $node->contents;
             $allNodeContent = $nodeContents->filter(function ($value) use ($content_id){
