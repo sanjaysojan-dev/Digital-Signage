@@ -5,14 +5,12 @@ namespace Tests\Unit;
 use App\Http\Controllers\DisplayNodeController;
 use App\Models\DisplayNode;
 use App\Models\User;
-use Illuminate\Foundation\Testing\DatabaseMigrations;
-use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Tests\TestCase;
 use Illuminate\Foundation\Testing\WithFaker;
 
-class TestDisplayNodeController extends TestCase
+class DisplayNodeControllerTest extends TestCase
 {
     use WithFaker;
 
@@ -26,7 +24,7 @@ class TestDisplayNodeController extends TestCase
 
         Auth::login($user);
 
-        $resquest = Request::create('/storeDisplay', 'POST', [
+        $request = Request::create('/storeDisplay', 'POST', [
             'node_title' => 'Test Node 1',
             'node_location' => 'Location',
             'node_description' => 'Description',
@@ -34,7 +32,7 @@ class TestDisplayNodeController extends TestCase
         ]);
 
         $controller = new DisplayNodeController();
-        $response = $controller->store($resquest);
+        $response = $controller->store($request);
 
         $node = DisplayNode::where('node_title', 'Test Node 1')
             ->where('node_location', 'Location');
@@ -75,14 +73,14 @@ class TestDisplayNodeController extends TestCase
         Auth::login(User::find(1));
 
         $response= $this->call('GET', '/editNodeDisplay/1');
-        $selectedNode = DisplayNode::find(1);
-        $response->assertViewHas('selectedNode', $selectedNode);
+        $selectedContent = DisplayNode::find(1);
+        $response->assertViewHas('selectedNode', $selectedContent);
     }
 
     public function test_update (){
         Auth::login(User::find(1));
 
-        $resquest = Request::create('/updateNodeDisplay', 'PUT', [
+        $request = Request::create('/updateNodeDisplay', 'PUT', [
             'node_title' => 'Test Node 1',
             'node_location' => 'Location',
             'node_description' => 'Modified',
@@ -90,7 +88,7 @@ class TestDisplayNodeController extends TestCase
         ]);
 
         $controller = new DisplayNodeController();
-        $response = $controller->update($resquest,1);
+        $response = $controller->update($request,1);
 
         $node = DisplayNode::where('id', 1)->where('node_description', 'Modified');
         $this->assertNotNull($node);

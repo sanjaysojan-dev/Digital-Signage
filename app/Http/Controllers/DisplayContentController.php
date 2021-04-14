@@ -54,10 +54,11 @@ class DisplayContentController extends Controller
      */
     public function store(Request $request)
     {
+
         $validatedData = $request->validate([
             'content_title' => 'required|max:255',
             'content_description' => 'required',
-            'image_upload' => 'image|nullable| max:1999'
+            //'image_upload' => 'image'
         ]);
 
         if (Auth::user()->can('create', DisplayContent::class)) {
