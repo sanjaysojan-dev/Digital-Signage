@@ -10,8 +10,7 @@
                 <div class="p-6 text-gray-200 bg-gray-900">
                     <div class="max-w-6xl mx-auto px-5 py-10">
                         <div class="text-center mb-10">
-                            <h1 class=" title-font  mb-4 text-4l font-extrabold leading-10 tracking-tight sm:text-5xl sm:leading-none md:text-6xl">
-                                Deployed Nodes</h1>
+                            <h1 class=" title-font  mb-4 text-4l font-extrabold leading-10 tracking-tight sm:text-5xl sm:leading-none md:text-6xl">Deployed Nodes</h1>
                             <p class="text-base leading-relaxed xl:w-2/4 lg:w-3/4 mx-auto"> All deployed displays. Users
                                 can click on the displays to upload content</p>
                         </div>
@@ -26,9 +25,10 @@
                                     @else
                                         @foreach($displayNodes as $display)
                                             @can('viewAny', $display)
+                                                <div name="Node{{$display->id}}"> </div>
                                             @component('components.node-display-card')
                                                 @slot('link')
-                                                    {{route('showNode',['id' => $display->id])}}}
+                                                    {{route('showNode',['id' => $display->id])}}
                                                 @endslot
                                                 @slot('nodeTitle')
                                                     {{$display->node_title}}

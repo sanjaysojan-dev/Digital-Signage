@@ -33,7 +33,7 @@
             <li> Display Owner: {{$nodeOwner}} </li>
             <li>Description: {{$nodeDescription}}</li>
             <li>Location: {{$nodeLocation}}</li>
-            <a href="{{$link}}"><li>{{$url}}</li></a>
+            <a id="Link" href="{{$link}}"><li>{{$url}}</li></a>
         </ul>
     </div>
 

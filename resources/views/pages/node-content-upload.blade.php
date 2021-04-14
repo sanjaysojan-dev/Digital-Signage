@@ -62,7 +62,7 @@
                                         method="post">
                                         @csrf
                                         @method('DELETE')
-                                        <button class=" bg-red-500 text-gray-900 px-2 py-2 rounded-md mr-2"
+                                        <button name="Remove{{$uploads->id}}"class=" bg-red-500 text-gray-900 px-2 py-2 rounded-md mr-2"
                                                 type="submit">Remove
                                         </button>
                                     </form>
@@ -87,8 +87,7 @@
                                     </select>
                                 </div>
                                 <button class="m-10 bg-yellow-500 text-gray-900 px-2 py-2 rounded-md mr-2"
-                                        type="submit">Post to Node
-                                </button>
+                                        type="submit">Post to Node</button>
                             </div>
                         </form>
                     @endif

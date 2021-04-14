@@ -61,7 +61,7 @@ class DisplayContentTest extends DuskTestCase
         });
     }
 
-    public function test_user_edit_node()
+    public function test_user_edit_content()
     {
         $this->browse(function (Browser $browser)  {
             $browser
