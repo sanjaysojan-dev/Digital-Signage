@@ -24,3 +24,4 @@ Homestead.json
 .phpunit.result.cache
 /brower_tests.log
 /storage/test_images
+/brower_tests.xml
