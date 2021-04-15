@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="" tests="18" assertions="33" errors="0" warnings="0" failures="0" skipped="0" time="57.053275">
+    <testsuite name="Browser Test Suite" tests="18" assertions="33" errors="0" warnings="0" failures="0" skipped="0" time="57.053275">
+      <testsuite name="Tests\Browser\DisplayContentTest" file="C:\xampp\htdocs\Digital-Signage\tests\Browser\DisplayContentTest.php" tests="3" assertions="6" errors="0" warnings="0" failures="0" skipped="0" time="15.953184">
+        <testcase name="test_user_create_content" class="Tests\Browser\DisplayContentTest" classname="Tests.Browser.DisplayContentTest" file="C:\xampp\htdocs\Digital-Signage\tests\Browser\DisplayContentTest.php" line="21" assertions="2" time="9.222987"/>
+        <testcase name="test_user_delete_content" class="Tests\Browser\DisplayContentTest" classname="Tests.Browser.DisplayContentTest" file="C:\xampp\htdocs\Digital-Signage\tests\Browser\DisplayContentTest.php" line="51" assertions="2" time="3.068609"/>
+        <testcase name="test_user_edit_content" class="Tests\Browser\DisplayContentTest" classname="Tests.Browser.DisplayContentTest" file="C:\xampp\htdocs\Digital-Signage\tests\Browser\DisplayContentTest.php" line="64" assertions="2" time="3.661588"/>
+      </testsuite>
+      <testsuite name="Tests\Browser\DisplayNodeTest" file="C:\xampp\htdocs\Digital-Signage\tests\Browser\DisplayNodeTest.php" tests="10" assertions="21" errors="0" warnings="0" failures="0" skipped="0" time="24.651154">
+        <testcase name="test_user_create_node" class="Tests\Browser\DisplayNodeTest" classname="Tests.Browser.DisplayNodeTest" file="C:\xampp\htdocs\Digital-Signage\tests\Browser\DisplayNodeTest.php" line="20" assertions="4" time="9.430606"/>
+        <testcase name="test_user_delete_node" class="Tests\Browser\DisplayNodeTest" classname="Tests.Browser.DisplayNodeTest" file="C:\xampp\htdocs\Digital-Signage\tests\Browser\DisplayNodeTest.php" line="52" assertions="2" time="2.959126"/>
+        <testcase name="test_user_edit_node" class="Tests\Browser\DisplayNodeTest" classname="Tests.Browser.DisplayNodeTest" file="C:\xampp\htdocs\Digital-Signage\tests\Browser\DisplayNodeTest.php" line="67" assertions="2" time="3.498877"/>
+        <testcase name="test_view_all_available_node" class="Tests\Browser\DisplayNodeTest" classname="Tests.Browser.DisplayNodeTest" file="C:\xampp\htdocs\Digital-Signage\tests\Browser\DisplayNodeTest.php" line="87" assertions="2" time="0.512197"/>
+        <testcase name="test_select_node" class="Tests\Browser\DisplayNodeTest" classname="Tests.Browser.DisplayNodeTest" file="C:\xampp\htdocs\Digital-Signage\tests\Browser\DisplayNodeTest.php" line="100" assertions="2" time="0.886900"/>
+        <testcase name="test_upload_content" class="Tests\Browser\DisplayNodeTest" classname="Tests.Browser.DisplayNodeTest" file="C:\xampp\htdocs\Digital-Signage\tests\Browser\DisplayNodeTest.php" line="115" assertions="2" time="2.296718"/>
+        <testcase name="test_view_imageslider" class="Tests\Browser\DisplayNodeTest" classname="Tests.Browser.DisplayNodeTest" file="C:\xampp\htdocs\Digital-Signage\tests\Browser\DisplayNodeTest.php" line="129" assertions="1" time="0.400639"/>
+        <testcase name="test_remove_content" class="Tests\Browser\DisplayNodeTest" classname="Tests.Browser.DisplayNodeTest" file="C:\xampp\htdocs\Digital-Signage\tests\Browser\DisplayNodeTest.php" line="141" assertions="2" time="2.076755"/>
+        <testcase name="test_flag_node" class="Tests\Browser\DisplayNodeTest" classname="Tests.Browser.DisplayNodeTest" file="C:\xampp\htdocs\Digital-Signage\tests\Browser\DisplayNodeTest.php" line="155" assertions="2" time="2.044602"/>
+        <testcase name="test_view_imageslider_2" class="Tests\Browser\DisplayNodeTest" classname="Tests.Browser.DisplayNodeTest" file="C:\xampp\htdocs\Digital-Signage\tests\Browser\DisplayNodeTest.php" line="169" assertions="2" time="0.544734"/>
+      </testsuite>
+      <testsuite name="Tests\Browser\LoginTest" file="C:\xampp\htdocs\Digital-Signage\tests\Browser\LoginTest.php" tests="2" assertions="2" errors="0" warnings="0" failures="0" skipped="0" time="5.916203">
+        <testcase name="test_user_login" class="Tests\Browser\LoginTest" classname="Tests.Browser.LoginTest" file="C:\xampp\htdocs\Digital-Signage\tests\Browser\LoginTest.php" line="15" assertions="1" time="5.295968"/>
+        <testcase name="test_user_logout" class="Tests\Browser\LoginTest" classname="Tests.Browser.LoginTest" file="C:\xampp\htdocs\Digital-Signage\tests\Browser\LoginTest.php" line="34" assertions="1" time="0.620236"/>
+      </testsuite>
+      <testsuite name="Tests\Browser\RegisterUserTest" file="C:\xampp\htdocs\Digital-Signage\tests\Browser\RegisterUserTest.php" tests="3" assertions="4" errors="0" warnings="0" failures="0" skipped="0" time="10.532733">
+        <testcase name="test_Visit_Registration_Page" class="Tests\Browser\RegisterUserTest" classname="Tests.Browser.RegisterUserTest" file="C:\xampp\htdocs\Digital-Signage\tests\Browser\RegisterUserTest.php" line="18" assertions="1" time="2.466865"/>
+        <testcase name="test_user_login" class="Tests\Browser\RegisterUserTest" classname="Tests.Browser.RegisterUserTest" file="C:\xampp\htdocs\Digital-Signage\tests\Browser\RegisterUserTest.php" line="26" assertions="1" time="4.837199"/>
+        <testcase name="test_user_already_registered" class="Tests\Browser\RegisterUserTest" classname="Tests.Browser.RegisterUserTest" file="C:\xampp\htdocs\Digital-Signage\tests\Browser\RegisterUserTest.php" line="41" assertions="2" time="3.228670"/>
+      </testsuite>
+    </testsuite>
+  </testsuite>
+</testsuites>
