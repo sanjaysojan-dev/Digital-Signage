@@ -50,6 +50,7 @@ class DisplayContentControllerTest extends TestCase
         $response->assertViewHas('selectedContent', $selectedContent);
     }
 
+
     public function test_update (){
 
         Auth::login(User::find(1));
@@ -65,6 +66,17 @@ class DisplayContentControllerTest extends TestCase
         $this->assertNotNull($node);
         $this->assertEquals(302, $response->getStatusCode());
     }
+
+    public function test_destroy (){
+        Auth::login(User::find(1));
+
+        $controller = new DisplayContentController();
+        $response = $controller->destroy(1);
+        $content = DisplayContent::find(1);
+        $this->assertNull($content);
+        $this->assertEquals(302, $response->getStatusCode());
+    }
+
 
 
 

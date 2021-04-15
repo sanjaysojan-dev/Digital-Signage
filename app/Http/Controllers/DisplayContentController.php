@@ -163,7 +163,7 @@ class DisplayContentController extends Controller
         $selectedContent = DisplayContent::findOrFail($id);
 
         if (Auth::user()->can('delete', $selectedContent)) {
-            unlink('storage/images/' . $selectedContent->image->filename);
+            //unlink('storage/images/' . $selectedContent->image->filename);
             foreach ($selectedContent->nodes as $node) {
                 $node->user->notify(new EmailNotification(EmailSubjectTypes::RemovalOfContent,
                     $selectedContent->content_title . EmailMessages::RemovalOfContentMessage, $node->id, Auth::user()));
