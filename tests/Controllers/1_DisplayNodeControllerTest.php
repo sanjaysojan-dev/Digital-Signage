@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Auth;
 use Tests\TestCase;
 use Illuminate\Foundation\Testing\WithFaker;
 
-class DisplayNodeControllerTest extends TestCase
+class DisplayNodeController1Test extends TestCase
 {
     use WithFaker;
 

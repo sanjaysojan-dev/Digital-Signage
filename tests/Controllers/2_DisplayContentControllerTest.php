@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 use Tests\TestCase;
 
-class DisplayContentControllerTest extends TestCase
+class DisplayContentController2Test extends TestCase
 {
     use WithFaker;
 
