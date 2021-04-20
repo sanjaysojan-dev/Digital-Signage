@@ -21,16 +21,8 @@
   <component name="ChangeListManager">
     <list default="true" id="63e3926f-c832-4fed-adf0-ff6e0b611f1d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2021_01_21_152121_create_posts_table.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2021_01_21_152134_create_comments_table.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/components/selected-node-card.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/components/selected-node-card.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pages/documentation-page-1.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/documentation-page-guide.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pages/image-slider.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/image-slider.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pages/node-content-upload.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/node-content-upload.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/Controllers/1_DisplayNodeControllerTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Controllers/1_DisplayNodeControllerTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/Controllers/2_DisplayContentControllerTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Controllers/2_DisplayContentControllerTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/Controllers/3_NodeContentControllerTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Controllers/3_NodeContentControllerTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/pages/documentation-node-wiki.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/documentation-node-wiki.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/pages/documentation-page-guide.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/documentation-page-guide.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -288,7 +280,7 @@
       <workItem from="1618571692950" duration="3906000" />
       <workItem from="1618615806377" duration="2258000" />
       <workItem from="1618707310868" duration="2299000" />
-      <workItem from="1618833735344" duration="4572000" />
+      <workItem from="1618833735344" duration="10190000" />
     </task>
     <servers />
   </component>
