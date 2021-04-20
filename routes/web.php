@@ -17,9 +17,13 @@ Route::get('/', function () {
     return view('pages.wiki');
 })->name('wiki');
 
-Route::get('/Documentation', function () {
-    return view('pages.documentation-page-1');
+Route::get('/documentation', function () {
+    return view('pages.documentation-page-guide');
 })->name('documentation');
+
+Route::get('/nodeGuide', function () {
+    return view('pages.documentation-node-wiki');
+})->name('nodeGuide');
 
 Route::get('/tcs', function () {
     return view('pages.terms-and-conditions');

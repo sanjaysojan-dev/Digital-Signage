@@ -102,5 +102,6 @@ class DisplayNodeController1Test extends TestCase
         $node = DisplayNode::find(1);
         $this->assertNull($node);
         $this->assertEquals(302, $response->getStatusCode());
+        $this->artisan('migrate:refresh');
     }
 }

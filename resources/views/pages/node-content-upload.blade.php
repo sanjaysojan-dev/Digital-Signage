@@ -16,6 +16,9 @@
                         @slot('nodeMode')
                             {{$node->node_mode}}
                         @endslot
+                        @slot('nodeID')
+                            {{$node->id}}
+                        @endslot
                         @slot('nodeOwner')
                             {{$node->user->email}}
                         @endslot
@@ -53,7 +56,7 @@
                                         {{"Creator: ".$uploads->user->email}}
                                     @endslot
                                     @slot('description')
-                                        {{"Decription: ".$uploads->content_description}}
+                                        {{"Description: ".$uploads->content_description}}
                                     @endslot
                                 @endcomponent
                                 <div class="flex items-center space-x-4 justify-center mt-4">
@@ -62,7 +65,8 @@
                                         method="post">
                                         @csrf
                                         @method('DELETE')
-                                        <button name="Remove{{$uploads->id}}"class=" bg-red-500 text-gray-900 px-2 py-2 rounded-md mr-2"
+                                        <button name="Remove{{$uploads->id}}"
+                                                class=" bg-red-500 text-gray-900 px-2 py-2 rounded-md mr-2"
                                                 type="submit">Remove
                                         </button>
                                     </form>
@@ -87,7 +91,8 @@
                                     </select>
                                 </div>
                                 <button class="m-10 bg-yellow-500 text-gray-900 px-2 py-2 rounded-md mr-2"
-                                        type="submit">Post to Node</button>
+                                        type="submit">Post to Node
+                                </button>
                             </div>
                         </form>
                     @endif

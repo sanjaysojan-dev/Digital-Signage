@@ -22,6 +22,11 @@ class DisplayContentController2Test extends TestCase
 
     public function test_store()
     {
+        User::factory()->create([
+            'id' => 1,
+            'email' => 'taylor@laravel.com',
+        ]);
+
         Auth::login(User::find(1));
 
         $request = Request::create ('/storeContent', 'POST', [
@@ -75,9 +80,7 @@ class DisplayContentController2Test extends TestCase
         $content = DisplayContent::find(1);
         $this->assertNull($content);
         $this->assertEquals(302, $response->getStatusCode());
+        $this->artisan('migrate:refresh');
     }
-
-
-
 
 }

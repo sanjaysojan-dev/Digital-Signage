@@ -43,7 +43,7 @@
                 <li>
                     <img class="object-fill shadow-xl rounded pb-5/6"
                          src="/storage/images/{{$content->image->filename}}"
-                         alt="bag">
+                         alt="image upload">
                 </li>
             </div>
         </figure>
@@ -51,17 +51,19 @@
 </div>
 
 <script>
-    setInterval("refresh_page();",10000);
+    setInterval("refresh_page();", 30000);
 
-    function refresh_page(){
+    function refresh_page() {
         window.location = location.href;
     }
-     $('.bxslider').bxSlider({
+
+    $('.bxslider').bxSlider({
         auto: true,
         autoStart: true,
-         randomStart: true,
+        randomStart: true,
+        mode: 'fade',
         pager: false,
-        pause: 2000,
+        pause: 4000,
         controls: false,
         captions: false,
         userCSS: true,

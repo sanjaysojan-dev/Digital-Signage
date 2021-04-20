@@ -30,6 +30,7 @@
         <hr class="mb-4 border-gray-700">
 
         <ul class="list-disc ml-4 mt-2">
+            <li> Node ID: {{$nodeID}} </li>
             <li> Display Owner: {{$nodeOwner}} </li>
             <li>Description: {{$nodeDescription}}</li>
             <li>Location: {{$nodeLocation}}</li>
