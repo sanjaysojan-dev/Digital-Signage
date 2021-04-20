@@ -72,8 +72,8 @@
                             <div
                                 class="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center">
                                 <div class="pt-10 px-2 sm:px-6">
-                                    <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-100">3:
-                                        Raspberry Pi Setup</h1>
+                                    <a href="{{route('nodeContentGuide')}}"><h1
+                                            class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-100">Node Content Management</h1></a>
                                     <p class="text-indigo-200 text-base pb-6">From local banks to local government, we
                                         partner with organizations on their journey to digital transformation. Our
                                         customers include 15 million professionals in 175 countries and 800 of the

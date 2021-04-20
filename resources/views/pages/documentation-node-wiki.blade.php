@@ -22,7 +22,7 @@
                                     <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-100">1. Node
                                         Creation</h1>
                                     <p class="text-indigo-200 text-base pb-6">
-                                        Found on 'My Display Nodes' Page
+                                        Found on 'My Display Nodes' Page.
                                     </p>
                                     <p class="text-indigo-200 text-base pb-6">
                                         1: Enter all relevant fields in the input box, including title, location of node
@@ -48,7 +48,7 @@
                                     <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-100">2. Edit
                                         Node</h1>
                                     <p class="text-indigo-200 text-base pb-6">
-                                        Found on 'My Display Nodes' Page
+                                        Found on 'My Display Nodes' Page.
                                     </p>
                                     <p class="text-indigo-200 text-base pb-6">
                                         1: Click the ‘Edit’ button to navigate to the update page.
@@ -89,7 +89,7 @@
                                     <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-100">3. Node
                                         Deletion</h1>
                                     <p class="text-indigo-200 text-base pb-6">
-                                        Found on 'My Display Nodes' Page
+                                        Found on 'My Display Nodes' Page.
                                     </p>
                                     <p class="text-indigo-200 text-base pb-6">
                                         1: Click the ‘Delete’ button to remove the display node completely. A session
