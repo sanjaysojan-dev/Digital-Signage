@@ -25,3 +25,5 @@ Homestead.json
 /brower_tests.log
 /storage/test_images
 /brower_tests.xml
+/.idea
+/feature_tests.xml

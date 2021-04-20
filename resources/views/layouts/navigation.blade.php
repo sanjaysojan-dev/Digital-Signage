@@ -23,7 +23,7 @@
                         {{ __('My Uploads') }}
                     </x-nav-link>
 
-                    <x-nav-link :href="route('wiki')" :active="request()->routeIs('wiki')">
+                    <x-nav-link :href="route('documentation')" :active="request()->routeIs('documentation')">
                         {{ __('Wiki') }}
                     </x-nav-link>
                 </div>
