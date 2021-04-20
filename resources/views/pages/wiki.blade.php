@@ -503,7 +503,7 @@
 
                     <div class="ml-12">
                         <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
-                            Please read the Terms and Conditions of before registering with the system.
+                            Please read the Terms and Conditions on using the display system before registering with the system.
                         </div>
                     </div>
                 </div>

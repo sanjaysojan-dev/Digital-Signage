@@ -25,9 +25,19 @@ Route::get('/nodeGuide', function () {
     return view('pages.documentation-node-wiki');
 })->name('nodeGuide');
 
+Route::get('/contentGuide', function () {
+    return view('pages.documentation-content-wiki');
+})->name('contentGuide');
+
 Route::get('/nodeContentGuide', function () {
     return view('pages.documentation-node-content-wiki');
 })->name('nodeContentGuide');
+
+Route::get('/raspberryGuide', function () {
+    return view('pages.documentation-raspberry-wiki');
+})->name('raspberryGuide');
+
+
 
 Route::get('/tcs', function () {
     return view('pages.terms-and-conditions');
