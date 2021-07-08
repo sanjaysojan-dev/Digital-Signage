@@ -63,7 +63,7 @@
         randomStart: true,
         mode: 'fade',
         pager: false,
-        pause: 4000,
+        pause: 10000,
         controls: false,
         captions: false,
         userCSS: true,

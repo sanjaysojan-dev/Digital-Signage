@@ -28,11 +28,16 @@ class NodeContentController extends Controller
         $content = DisplayContent::findOrFail($request['node_content']);
         $manyToMany = NodeContent::where('display_node_id', $id)->get();
 
+        // checks to see if user has authorisation to upload to the node
         if (Auth::user()->can('create', NodeContent::class)){
+
+            //checks if the content has already been uploaded
             if ($manyToMany->contains('display_content_id', $content['id'])) {
                 session()->flash('session_message', 'The selected content has already been uploaded');
                 return redirect()->route('showNode', ['id' => $id]);
             } else {
+
+                //Creates a new many to many relationship
                 $NodeContent = new NodeContent();
                 $NodeContent->display_node_id = $node->id;
                 $NodeContent->display_content_id = $content->id;
@@ -45,6 +50,7 @@ class NodeContentController extends Controller
             session()->flash('session_message', 'The selected content has been uploaded');
             return redirect()->route('showNode', ['id' => $id]);
         } else {
+            //redirects back to the previous page if the user does not have authorisation
             session()->flash('session_message', "You don't have authentication to upload to Node");
             return redirect()->route('showNode', ['id' => $id]);
         }
@@ -62,7 +68,9 @@ class NodeContentController extends Controller
         $displayContent = DisplayContent::findOrFail($content_id);
         $displayNode = DisplayNode::findOrFail($node_id);
 
+        // Checks if the user is either the node owner or content owner of selected content
         if (((Auth::user()->id == $displayContent->user_id) || (Auth::user()->id == $displayNode->user_id))) {
+
             $removeContent = NodeContent::where('display_node_id', $node_id)->
             where('display_content_id', $content_id)->get();
 
@@ -74,8 +82,12 @@ class NodeContentController extends Controller
             session()->flash('session_message', "Content removed from Node");
             return redirect()->route('showNode', ['id' => $node_id]);
         } else {
+            //redirects back to the previous page if the user does not have authorisation
             session()->flash('session_message', "You don't have authentication to delete content from this node");
             return redirect()->route('showNode', ['id' => $node_id]);
         }
     }
 }
+
+
+

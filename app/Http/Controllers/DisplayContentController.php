@@ -58,7 +58,7 @@ class DisplayContentController extends Controller
         $validatedData = $request->validate([
             'content_title' => 'required|max:255',
             'content_description' => 'required',
-            //'image_upload' => 'image'
+            'image_upload' => 'image'
         ]);
 
         if (Auth::user()->can('create', DisplayContent::class)) {
@@ -163,7 +163,7 @@ class DisplayContentController extends Controller
         $selectedContent = DisplayContent::findOrFail($id);
 
         if (Auth::user()->can('delete', $selectedContent)) {
-            //unlink('storage/images/' . $selectedContent->image->filename);
+            unlink('storage/images/' . $selectedContent->image->filename);
             foreach ($selectedContent->nodes as $node) {
                 $node->user->notify(new EmailNotification(EmailSubjectTypes::RemovalOfContent,
                     $selectedContent->content_title . EmailMessages::RemovalOfContentMessage, $node->id, Auth::user()));

@@ -21,13 +21,16 @@
   <component name="ChangeListManager">
     <list default="true" id="63e3926f-c832-4fed-adf0-ff6e0b611f1d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/auth/confirm-password.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/confirm-password.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/auth/forgot-password.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/forgot-password.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/auth/login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/login.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/auth/register.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/register.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/auth/reset-password.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/reset-password.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/auth/verify-email.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/verify-email.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/guest-navigation.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/guest-navigation.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/DisplayContentController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/DisplayContentController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/NodeContentController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/NodeContentController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/pages/documentation-content-wiki.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/documentation-content-wiki.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/pages/documentation-node-content-wiki.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/documentation-node-content-wiki.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/pages/documentation-node-wiki.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/documentation-node-wiki.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/pages/documentation-page-guide.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/documentation-page-guide.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/pages/documentation-raspberry-wiki.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/documentation-raspberry-wiki.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/pages/image-slider.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/image-slider.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/pages/terms-and-conditions.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/terms-and-conditions.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/pages/wiki.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/wiki.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -285,7 +288,14 @@
       <workItem from="1618571692950" duration="3906000" />
       <workItem from="1618615806377" duration="2258000" />
       <workItem from="1618707310868" duration="2299000" />
-      <workItem from="1618833735344" duration="18394000" />
+      <workItem from="1618833735344" duration="28565000" />
+      <workItem from="1619536789376" duration="677000" />
+      <workItem from="1619539426134" duration="516000" />
+      <workItem from="1619541696030" duration="186000" />
+      <workItem from="1619541911651" duration="4323000" />
+      <workItem from="1619704541481" duration="5221000" />
+      <workItem from="1619788782406" duration="36000" />
+      <workItem from="1619790581314" duration="8000" />
     </task>
     <servers />
   </component>

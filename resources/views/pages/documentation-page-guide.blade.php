@@ -16,18 +16,18 @@
                             <!--YouTube Video Section-->
                             <div class="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 sm:block hidden">
                                 <iframe width="500" height="400"
-                                        src="https://www.youtube.com/embed/uHX0TWrUP_g">
+                                        src="https://www.youtube.com/embed/waK_SIwj9B0" allowfullscreen>
                                 </iframe>
                             </div>
                             <div
                                 class="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center">
                                 <div class="pt-10 px-2 sm:px-6">
                                     <a href="{{route('nodeGuide')}}"><h1
-                                            class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-100">Node
+                                            class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-100">1. Node
                                             Management</h1></a>
                                     <p class="text-indigo-200 text-base pb-6">Click on the link to find the step by step
                                         guid in managing your display node or play the YouTube video to watch the setup
-                                        by setup guide of managing a display node.</p>
+                                        guide of managing a display node.</p>
                                 </div>
                             </div>
                         </div>
@@ -41,16 +41,17 @@
                                 class="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center">
                                 <div class="pt-10 px-2 sm:px-6">
                                     <a href="{{route('contentGuide')}}"><h1
-                                            class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-100">Node Content Management</h1></a>
+                                            class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-100">
+                                            2. Content Management</h1></a>
                                     <p class="text-indigo-200 text-base pb-6">Click on the link to find the step by step
-                                        guid in managing your uploaded content to nodes or play the YouTube video to watch the setup
-                                        by setup guide of managing a display node.</p>
+                                        guid in managing your uploaded content to nodes or play the YouTube video to
+                                        watch the setup guide of managing a display node.</p>
                                 </div>
                             </div>
 
                             <div class="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 sm:block hidden">
                                 <iframe width="500" height="400"
-                                        src="https://www.youtube.com/embed/uHX0TWrUP_g">
+                                        src="https://www.youtube.com/embed/waK_SIwj9B0" allowfullscreen>
                                 </iframe>
                             </div>
                         </div>
@@ -63,7 +64,7 @@
                             <!--YouTube Video Section-->
                             <div class="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 sm:block hidden">
                                 <iframe width="500" height="400"
-                                        src="https://www.youtube.com/embed/uHX0TWrUP_g">
+                                        src="https://www.youtube.com/embed/waK_SIwj9B0" allowfullscreen>
                                 </iframe>
 
                             </div>
@@ -72,11 +73,11 @@
                                 class="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center">
                                 <div class="pt-10 px-2 sm:px-6">
                                     <a href="{{route('nodeContentGuide')}}"><h1
-                                            class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-100">Node Content Management</h1></a>
-                                    <p class="text-indigo-200 text-base pb-6">From local banks to local government, we
-                                        partner with organizations on their journey to digital transformation. Our
-                                        customers include 15 million professionals in 175 countries and 800 of the
-                                        fortune 1000.</p>
+                                            class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-100">3. Node
+                                            Content Management</h1></a>
+                                    <p class="text-indigo-200 text-base pb-6">Click on the link to find the step by step
+                                        guide on uploading the content you created to targeted display node or play the
+                                        YouTube video to watch the setup guide.</p>
                                 </div>
                             </div>
                         </div>
@@ -90,17 +91,17 @@
                                 class="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center">
                                 <div class="pt-10 px-2 sm:px-6">
                                     <a href="{{route('raspberryGuide')}}"><h1
-                                            class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-100">Raspberry Pi Setup</h1></a>
-                                    <p class="text-indigo-200 text-base pb-6">From local banks to local government, we
-                                        partner with organizations on their journey to digital transformation. Our
-                                        customers include 15 million professionals in 175 countries and 800 of the
-                                        fortune 1000.</p>
+                                            class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-100">
+                                            4. Raspberry Pi Setup</h1></a>
+                                    <p class="text-indigo-200 text-base pb-6">Click on the link to find the step by step
+                                        guide on setting up your display unit using a Raspberry Pi or play the YouTube
+                                        video to watch the setup guide.</p>
                                 </div>
                             </div>
 
                             <div class="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 sm:block hidden">
                                 <iframe width="500" height="400"
-                                        src="https://www.youtube.com/embed/uHX0TWrUP_g">
+                                        src="https://www.youtube.com/embed/xOROxcHJzw4" allowfullscreen>
                                 </iframe>
                             </div>
                         </div>

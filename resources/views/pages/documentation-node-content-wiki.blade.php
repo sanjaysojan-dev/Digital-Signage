@@ -116,6 +116,15 @@
                             </div>
                         </div>
                     </section>
+
+
+                    <p class="text-indigo-200 text-base pb-6">
+                        When creating a node, node owners will be able to view all content that is uploaded to the node.
+                        The node owner can remove any nodes that they deem inappropriate or out of date. An email
+                        notification will be sent to the content owner when doing so. Additionally, content owners that
+                        are not node owners, can remove their content. Content owners will only be able to remove their
+                        uploaded content and will not be able to remove any others that are not theirs.
+                    </p>
                 </div>
             </div>
         </div>

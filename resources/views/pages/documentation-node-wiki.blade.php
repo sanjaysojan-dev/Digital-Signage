@@ -26,7 +26,8 @@
                                     </p>
                                     <p class="text-indigo-200 text-base pb-6">
                                         1: Enter all relevant fields in the input box, including title, location of node
-                                        and description.
+                                        and description. It is important to include metadata of the display that you are
+                                        using to ensure users can upload appropriate content for your node.
                                     </p>
                                     <p class="text-indigo-200 text-base pb-6">
                                         2: Click the ‘CREATE’ button to create your display node.

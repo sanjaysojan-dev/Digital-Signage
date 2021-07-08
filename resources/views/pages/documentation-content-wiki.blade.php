@@ -19,19 +19,24 @@
                             <div
                                 class="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center">
                                 <div class="px-2 sm:px-4">
-                                    <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-100">1. Content
+                                    <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-100">1.
+                                        Content
                                         Creation</h1>
                                     <p class="text-indigo-200 text-base pb-6">
                                         Found on 'My Uploads' Page.
                                     </p>
                                     <p class="text-indigo-200 text-base pb-6">
-                                        1: Enter all relevant fields in the input box, including title and description.
+                                        1: Enter all relevant fields in the input box, including title and
+                                        description.Content information is
+                                        for you, therefore include information that is relevant and important.
                                     </p>
                                     <p class="text-indigo-200 text-base pb-6">
                                         2: Click 'Choose File' to select image file to upload.
                                     </p>
                                     <p class="text-indigo-200 text-base pb-6">
-                                        3: Click the ‘Upload’ button to create content.
+                                        3: Click the ‘Upload’ button to create content. Currently, there is 2MB limit on
+                                        the images you can upload. Images over this size limit will not be uploaded.
+                                        Additionally, any non-image file type will not be accepted.
                                     </p>
                                     <p class="text-indigo-200 text-base pb-6">
                                         4: The display node will now appear on the page.
@@ -88,7 +93,8 @@
                             <div
                                 class="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center">
                                 <div class="px-2 sm:px-4">
-                                    <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-100">3. Content
+                                    <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-100">3.
+                                        Content
                                         Deletion</h1>
                                     <p class="text-indigo-200 text-base pb-6">
                                         Found on 'My Uploads' Page.
